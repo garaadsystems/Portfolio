@@ -31,28 +31,24 @@ const services = [
         />
       </svg>
     ),
-    title: "Digital Engineering",
-    tagline: "Robust digital infrastructure that scales with your institution.",
+    title: "Custom Software Development",
+    tagline: "Tailored systems built for institutional realities, not adapted from templates.",
     description:
-      "We build secure, scalable, and reliable digital systems tailored to institutional needs. Our engineering approach combines modern technology architecture with practical implementation to ensure long-term performance and adaptability.",
+      "We build web applications, portals, dashboards, and internal management systems engineered to your organization's specific workflows and operational environment — with secure data handling and role-based access control built in from the start.",
   },
   {
     number: "03",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
-          stroke="#0A1628"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
-        <path d="M9 22V12h6v10" stroke="#0A1628" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M18 8h1a4 4 0 010 8h-1" stroke="#0A1628" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" stroke="#0A1628" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M6 1v3M10 1v3M14 1v3" stroke="#0A1628" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    title: "Institutional Modernization",
-    tagline: "Modern, agile, and digitally enabled institutions.",
+    title: "Systems Integration",
+    tagline: "Connecting legacy infrastructure with modern architectures.",
     description:
-      "We help organizations transform their structures, processes, and capabilities to operate effectively in a digital environment. Our institutional modernization services align technology, governance, and operations for sustainable transformation.",
+      "Many institutions operate fragmented systems that don't communicate. We build integration layers that bridge legacy infrastructure with modern platforms — improving data flow, eliminating duplication, and enabling cross-system visibility without disrupting existing operations.",
   },
   {
     number: "04",
@@ -73,10 +69,10 @@ const services = [
         />
       </svg>
     ),
-    title: "Advisory & Strategy",
-    tagline: "Clear direction and confident digital transformation programs.",
+    title: "Technical Consulting",
+    tagline: "Clear architecture direction for complex digital transformation.",
     description:
-      "We provide strategic guidance to help leaders plan, prioritize, and implement digital transformation initiatives with clarity and confidence. Our advisory services bridge policy, technology, and institutional realities.",
+      "We provide expert guidance on architecture design, workflow optimization, tech stack selection, and digital transformation roadmaps. Our consulting bridges policy, technology, and operational reality — translating institutional ambition into funded, executable plans.",
   },
 ];
 
@@ -120,6 +116,29 @@ export default function Services() {
               <p className="text-sm text-gray-500 leading-relaxed">{service.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Footer link */}
+        <div className="mt-10 flex items-center justify-between border-t border-gray-200 pt-8">
+          <p className="text-sm text-gray-500">
+            Every engagement is delivered with full documentation, structured handoffs, and
+            ongoing support.
+          </p>
+          <a
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#0A1628] hover:text-[#8CC220] transition-colors shrink-0 ml-8"
+          >
+            Explore all services
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

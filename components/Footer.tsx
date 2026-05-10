@@ -59,10 +59,15 @@ export default function Footer() {
               Company
             </h4>
             <ul className="space-y-3">
-              {["About Us", "Leadership", "Careers", "Contact"].map((link) => (
-                <li key={link}>
-                  <Link href="#" className="text-xs text-[#0A1628]/55 hover:text-[#0A1628] transition-colors">
-                    {link}
+              {[
+                { label: "About Us", href: "/about" },
+                { label: "Our Work", href: "/projects" },
+                { label: "Insights", href: "/insights" },
+                { label: "Contact", href: "/contact" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-xs text-[#0A1628]/55 hover:text-[#0A1628] transition-colors">
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -75,10 +80,15 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-3">
-              {["E-Government", "Digital Engineering", "Modernization", "Advisory"].map((link) => (
-                <li key={link}>
-                  <Link href="#" className="text-xs text-[#0A1628]/55 hover:text-[#0A1628] transition-colors">
-                    {link}
+              {[
+                { label: "E-Government", href: "/services" },
+                { label: "Custom Software", href: "/services" },
+                { label: "Systems Integration", href: "/services" },
+                { label: "Advisory", href: "/services" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-xs text-[#0A1628]/55 hover:text-[#0A1628] transition-colors">
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -91,10 +101,15 @@ export default function Footer() {
               Insights
             </h4>
             <ul className="space-y-3">
-              {["Blog", "Reports", "News", "Case Studies"].map((link) => (
-                <li key={link}>
-                  <Link href="#" className="text-xs text-[#0A1628]/55 hover:text-[#0A1628] transition-colors">
-                    {link}
+              {[
+                { label: "Articles", href: "/insights" },
+                { label: "Case Studies", href: "/projects" },
+                { label: "Technical Guides", href: "/insights" },
+                { label: "Company News", href: "/insights" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-xs text-[#0A1628]/55 hover:text-[#0A1628] transition-colors">
+                    {link.label}
                   </Link>
                 </li>
               ))}

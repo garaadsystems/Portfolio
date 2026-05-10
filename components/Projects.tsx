@@ -103,7 +103,7 @@ export default function Projects() {
             </h2>
           </div>
           <Link
-            href="#"
+            href="/projects"
             className="inline-flex items-center gap-2 border border-gray-200 text-gray-600 text-sm px-6 py-2.5 rounded-xl font-medium hover:border-gray-900 hover:text-gray-900 transition-colors self-start md:self-auto shrink-0"
           >
             View All Projects
@@ -148,7 +148,7 @@ export default function Projects() {
                   ))}
                 </div>
                 <Link
-                  href="#"
+                  href="/projects"
                   className="text-sm text-[#0A1628] font-semibold hover:text-[#78AB14] inline-flex items-center gap-1.5 shrink-0 ml-4"
                 >
                   View

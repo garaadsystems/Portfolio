@@ -3,11 +3,19 @@ import Link from "next/link";
 const stats = [
   { value: "20+", label: "Projects Delivered" },
   { value: "8+", label: "Institutions Served" },
+  { value: "100%", label: "On-Time Delivery" },
   { value: "5+", label: "Years of Experience" },
-  { value: "3", label: "Countries" },
 ];
 
-const clients = ["Gebeya", "FlyEase", "Mahadho", "Grand Space", "Sabi", "Masaf", "SRC"];
+const clients = [
+  "Somali Reg. Gov.",
+  "Masaf",
+  "FlyEase",
+  "Mahadho",
+  "Grand Space",
+  "Sabi",
+  "SRC",
+];
 
 export default function Hero() {
   return (
@@ -28,7 +36,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2.5 bg-[#0A1628]/10 border border-[#0A1628]/15 rounded-full px-4 py-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#0A1628] animate-pulse block" />
             <span className="text-xs text-white/80 font-medium tracking-wide">
-              Digital Transformation Agency — East Africa
+              Technology &amp; Digital Consultancy — Jijiga, Ethiopia
             </span>
           </div>
         </div>
@@ -43,15 +51,16 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-center text-white/80 text-base md:text-lg max-w-lg mx-auto mb-12 leading-relaxed">
-          We design and engineer e-government systems, digital platforms, and
-          institutional modernization solutions for the public and private sector.
+        <p className="text-center text-white/80 text-base md:text-lg max-w-xl mx-auto mb-12 leading-relaxed">
+          We design, build, and deploy e-government platforms and mission-critical
+          software for public institutions that demand reliability, security, and
+          long-term operational value.
         </p>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
           <Link
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center gap-2 bg-[#0A1628] text-white text-sm px-8 py-3.5 rounded-xl font-semibold hover:bg-[#0d1f3a] transition-colors"
           >
             Start a Project
@@ -66,7 +75,7 @@ export default function Hero() {
             </svg>
           </Link>
           <Link
-            href="#projects"
+            href="/projects"
             className="inline-flex items-center gap-2 bg-white/15 border border-white/25 text-white text-sm px-8 py-3.5 rounded-xl font-medium hover:bg-white/25 transition-colors"
           >
             View Our Work
@@ -89,7 +98,7 @@ export default function Hero() {
         {/* Trusted by */}
         <div className="mt-20 text-center">
           <p className="text-[10px] text-white/60 uppercase tracking-[0.25em] font-semibold mb-7">
-            Trusted by leading organizations
+            Trusted by institutions &amp; organizations
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             {clients.map((name) => (

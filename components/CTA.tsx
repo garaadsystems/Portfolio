@@ -29,10 +29,10 @@ export default function CTA() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="mailto:info@garaadsystems.com"
+            href="/contact"
             className="inline-flex items-center gap-2 bg-[#0A1628] text-white text-sm px-8 py-4 rounded-xl font-semibold hover:bg-[#0d1f3a] transition-colors"
           >
-            Send Us a Message
+            Start a Conversation
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path
                 d="M3 8h10M9 4l4 4-4 4"
