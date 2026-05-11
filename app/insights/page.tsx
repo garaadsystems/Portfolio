@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsletterForm from "@/components/NewsletterForm";
 import { articles } from "@/lib/data/insights";
 
 export const metadata: Metadata = {
@@ -188,15 +189,8 @@ export default function InsightsPage() {
               We publish articles on e-government, digital transformation, and technical
               architecture. No noise — just substantive thinking from our team.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto mb-14">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 bg-white/8 border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#8CC220]/50 transition-colors"
-              />
-              <button className="bg-[#8CC220] text-[#0A1628] text-sm px-6 py-3.5 rounded-xl font-bold hover:bg-[#78AB14] transition-colors shrink-0">
-                Subscribe
-              </button>
+            <div className="mb-14">
+              <NewsletterForm />
             </div>
             <div className="border-t border-white/10 pt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
               <Link
