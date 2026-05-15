@@ -20,18 +20,6 @@ export default function OGImage() {
           overflow: "hidden",
         }}
       >
-        {/* Grid pattern */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage:
-              "linear-gradient(#8CC220 1px, transparent 1px), linear-gradient(to right, #8CC220 1px, transparent 1px)",
-            backgroundSize: "72px 72px",
-            opacity: 0.06,
-          }}
-        />
-
         {/* Glow circle top-right */}
         <div
           style={{
@@ -41,7 +29,8 @@ export default function OGImage() {
             width: 500,
             height: 500,
             borderRadius: "50%",
-            background: "rgba(140,194,32,0.07)",
+            background: "#8CC220",
+            opacity: 0.07,
           }}
         />
 
