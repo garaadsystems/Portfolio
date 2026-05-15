@@ -26,8 +26,9 @@ export default function OGImage() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "linear-gradient(rgba(140,194,32,0.06) 1px, transparent 1px), linear-gradient(to right, rgba(140,194,32,0.06) 1px, transparent 1px)",
+              "linear-gradient(#8CC220 1px, transparent 1px), linear-gradient(to right, #8CC220 1px, transparent 1px)",
             backgroundSize: "72px 72px",
+            opacity: 0.06,
           }}
         />
 
