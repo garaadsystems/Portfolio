@@ -77,3 +77,15 @@ export const projectsForSitemapQuery = groq`
     _updatedAt,
   }
 `
+
+export const testimonialsQuery = groq`
+  *[_type == "testimonial"] | order(order asc) {
+    _id,
+    quote,
+    name,
+    title,
+    org,
+    photo,
+    order,
+  }
+`
