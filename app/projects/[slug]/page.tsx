@@ -108,7 +108,7 @@ export default async function ProjectPage({ params }: Props) {
                   Tags
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
+                  {project.tags.map((tag: string) => (
                     <span
                       key={tag}
                       className="text-[11px] font-medium text-gray-500 bg-gray-50 border border-gray-100 px-2.5 py-1 rounded-lg"
@@ -123,7 +123,7 @@ export default async function ProjectPage({ params }: Props) {
                   Deliverables
                 </span>
                 <ul className="space-y-2.5">
-                  {project.deliverables.map((d) => (
+                  {project.deliverables.map((d: string) => (
                     <li key={d} className="flex items-start gap-2.5">
                       <svg
                         width="13"
@@ -167,7 +167,7 @@ export default async function ProjectPage({ params }: Props) {
               <h2 className="text-4xl font-black text-white tracking-tight">Key Outcomes</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
-              {project.outcomes.map((outcome, i) => (
+              {project.outcomes.map((outcome: string, i: number) => (
                 <div
                   key={outcome}
                   className="flex items-start gap-4 bg-white/5 border border-white/8 rounded-xl p-6 hover:bg-white/8 transition-colors"

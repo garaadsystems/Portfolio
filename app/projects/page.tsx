@@ -92,7 +92,7 @@ export default async function ProjectsPage() {
                     {featured.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {featured.tags.map((tag) => (
+                    {featured.tags.map((tag: string) => (
                       <span
                         key={tag}
                         className="text-[11px] font-medium text-gray-500 bg-white border border-gray-200 px-2.5 py-1 rounded-lg"
@@ -107,7 +107,7 @@ export default async function ProjectsPage() {
                     Key Outcomes
                   </p>
                   <ul className="space-y-4">
-                    {featured.outcomes.slice(0, 5).map((outcome) => (
+                    {featured.outcomes.slice(0, 5).map((outcome: string) => (
                       <li key={outcome} className="flex items-start gap-3">
                         <svg
                           width="14"
@@ -187,7 +187,7 @@ export default async function ProjectsPage() {
                   </p>
                   <div className="flex items-center justify-between">
                     <div className="flex flex-wrap gap-2">
-                      {project.tags.slice(0, 3).map((tag) => (
+                      {project.tags.slice(0, 3).map((tag: string) => (
                         <span
                           key={tag}
                           className="text-[11px] font-medium text-gray-500 bg-gray-50 border border-gray-100 px-2.5 py-1 rounded-lg"
