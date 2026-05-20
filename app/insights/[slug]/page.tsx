@@ -1,18 +1,21 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { articles, type ContentBlock } from "@/lib/data/insights";
+import Navbar from "@/components/Navbar";
+import { client } from "@/sanity/lib/client";
+import { articleBySlugQuery, articlesQuery } from "@/sanity/lib/queries";
+import type { Metadata } from "next";
+import { PortableText } from "next-sanity";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 type Props = { params: { slug: string } };
 
-export function generateStaticParams() {
-  return articles.map((a) => ({ slug: a.slug }));
+export async function generateStaticParams() {
+  const articles = await client.fetch(articlesQuery);
+  return articles.map((a: any) => ({ slug: a.slug.current }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const article = articles.find((a) => a.slug === params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const article = await client.fetch(articleBySlugQuery, { slug: params.slug });
   if (!article) return {};
   return {
     title: `${article.title} — Garaad Systems`,
@@ -28,60 +31,41 @@ const categoryColors: Record<string, string> = {
   "Digital Transformation": "bg-purple-50 text-purple-600",
 };
 
-function Block({ block }: { block: ContentBlock }) {
-  switch (block.type) {
-    case "paragraph":
-      return (
-        <p className="text-gray-600 text-base leading-relaxed">{block.text}</p>
-      );
-    case "heading":
-      return (
-        <h2 className="text-xl font-black text-gray-900 tracking-tight mt-2">{block.text}</h2>
-      );
-    case "list":
-      return (
-        <ul className="space-y-3">
-          {block.items.map((item) => (
-            <li key={item} className="flex items-start gap-3">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-                className="mt-0.5 shrink-0"
-              >
-                <path
-                  d="M2.5 7l3 3 6-6"
-                  stroke="#8CC220"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="text-sm text-gray-600 leading-relaxed">{item}</span>
-            </li>
-          ))}
-        </ul>
-      );
-    case "quote":
-      return (
-        <blockquote className="border-l-4 border-[#8CC220] pl-6 py-2">
-          <p className="text-lg font-semibold text-gray-800 leading-snug italic">
-            &ldquo;{block.text}&rdquo;
-          </p>
-          {block.attribution && (
-            <p className="text-xs text-gray-400 mt-2 not-italic">{block.attribution}</p>
-          )}
-        </blockquote>
-      );
-  }
-}
+const portableTextComponents = {
+  types: {
+    block: ({ value }: any) => {
+      const { style = "normal", children, level } = value;
+      switch (style) {
+        case "h2":
+          return <h2 className="text-2xl font-bold mt-8 mb-4">{children}</h2>;
+        case "h3":
+          return <h3 className="text-xl font-bold mt-6 mb-3">{children}</h3>;
+        case "blockquote":
+          return (
+            <blockquote className="border-l-4 border-[#8CC220] pl-6 py-4 my-6 italic text-gray-600">
+              {children}
+            </blockquote>
+          );
+        default:
+          return <p className="mb-4 leading-relaxed">{children}</p>;
+      }
+    },
+  },
+  marks: {
+    strong: ({ children }: any) => <strong className="font-bold">{children}</strong>,
+    em: ({ children }: any) => <em className="italic">{children}</em>,
+    code: ({ children }: any) => (
+      <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono">{children}</code>
+    ),
+  },
+};
 
-export default function InsightPage({ params }: Props) {
-  const article = articles.find((a) => a.slug === params.slug);
+export default async function InsightPage({ params }: Props) {
+  const article = await client.fetch(articleBySlugQuery, { slug: params.slug });
   if (!article) notFound();
 
-  const related = articles.filter((a) => a.slug !== article.slug).slice(0, 3);
+  const allArticles = await client.fetch(articlesQuery);
+  const related = allArticles.filter((a: any) => a.slug.current !== article.slug.current).slice(0, 3);
 
   return (
     <>
@@ -138,15 +122,13 @@ export default function InsightPage({ params }: Props) {
         {/* Article body */}
         <section className="py-24 px-6 bg-white">
           <div className="max-w-3xl mx-auto">
-            <div className="space-y-7">
-              {article.content.map((block, i) => (
-                <Block key={i} block={block} />
-              ))}
+            <div className="prose prose-lg max-w-none">
+              <PortableText value={article.content} components={portableTextComponents} />
             </div>
 
             {/* Topics */}
             <div className="mt-14 pt-10 border-t border-gray-100 flex flex-wrap gap-2">
-              {article.topics.map((topic) => (
+              {article.topics.map((topic: string) => (
                 <span
                   key={topic}
                   className="text-[11px] font-medium text-gray-500 bg-gray-50 border border-gray-100 px-2.5 py-1 rounded-lg"
@@ -183,10 +165,10 @@ export default function InsightPage({ params }: Props) {
                 </Link>
               </div>
               <div className="grid md:grid-cols-3 gap-5">
-                {related.map((a) => (
+                {related.map((a: any) => (
                   <Link
-                    key={a.slug}
-                    href={`/insights/${a.slug}`}
+                    key={a.slug.current}
+                    href={`/insights/${a.slug.current}`}
                     className="group bg-white border border-gray-100 rounded-2xl p-7 hover:border-gray-200 hover:shadow-xl hover:shadow-gray-100 transition-all duration-300 block"
                   >
                     <div className="flex items-center gap-2.5 mb-4">

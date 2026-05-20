@@ -1,18 +1,16 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import NewsletterForm from "@/components/NewsletterForm";
+import { client } from "@/sanity/lib/client";
+import { articlesQuery } from "@/sanity/lib/queries";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import NewsletterForm from "@/components/NewsletterForm";
-import { articles } from "@/lib/data/insights";
 
 export const metadata: Metadata = {
   title: "Insights — Garaad Systems",
   description:
     "Perspectives, technical guides, and case studies from Garaad Systems on e-government, digital transformation, and institutional modernization in Ethiopia and the Horn of Africa.",
 };
-
-const featuredArticle = articles.find((a) => a.featured)!;
-const restArticles = articles.filter((a) => !a.featured);
 
 const categoryColors: Record<string, string> = {
   Perspective: "bg-[#8CC220]/10 text-[#5a9010]",
@@ -22,7 +20,21 @@ const categoryColors: Record<string, string> = {
   "Digital Transformation": "bg-purple-50 text-purple-600",
 };
 
-export default function InsightsPage() {
+export default async function InsightsPage() {
+  const articles = await client.fetch(articlesQuery);
+  const featuredArticle = articles.find((a: any) => a.featured);
+  const restArticles = articles.filter((a: any) => !a.featured);
+
+  if (!featuredArticle) {
+    return (
+      <>
+        <Navbar />
+        <main>Loading articles...</main>
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar />
@@ -62,7 +74,7 @@ export default function InsightsPage() {
               Featured Article
             </p>
             <Link
-              href={`/insights/${featuredArticle.slug}`}
+              href={`/insights/${featuredArticle.slug.current}`}
               className="group block bg-[#0A1628] rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300"
             >
               <div className="grid md:grid-cols-3">
@@ -103,7 +115,7 @@ export default function InsightsPage() {
                       Topics
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {featuredArticle.topics.map((topic) => (
+                      {featuredArticle.topics.map((topic: string) => (
                         <span
                           key={topic}
                           className="text-[11px] font-medium text-white/40 border border-white/15 px-2.5 py-1 rounded-lg"
@@ -129,10 +141,10 @@ export default function InsightsPage() {
               <p className="text-xs text-gray-400">{articles.length} articles</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {restArticles.map((article) => (
+              {restArticles.map((article: any) => (
                 <Link
-                  key={article.slug}
-                  href={`/insights/${article.slug}`}
+                  key={article.slug.current}
+                  href={`/insights/${article.slug.current}`}
                   className="group border border-gray-100 rounded-2xl p-7 hover:border-gray-200 hover:shadow-xl hover:shadow-gray-100 transition-all duration-300 flex flex-col"
                 >
                   <div className="flex items-center gap-2.5 mb-5">
@@ -151,7 +163,7 @@ export default function InsightsPage() {
                   <p className="text-xs text-gray-500 leading-relaxed mb-5">{article.excerpt}</p>
                   <div className="flex items-center justify-between mt-auto">
                     <div className="flex flex-wrap gap-1.5">
-                      {article.topics.slice(0, 2).map((topic) => (
+                      {article.topics.slice(0, 2).map((topic: string) => (
                         <span
                           key={topic}
                           className="text-[10px] font-medium text-gray-400 bg-gray-50 border border-gray-100 px-2 py-0.5 rounded"
