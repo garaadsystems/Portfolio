@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "node scripts/seed-articles.js"
+    "seed": "node scripts/seed-articles.js",
+    "seed-projects": "node scripts/seed-projects.js"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",

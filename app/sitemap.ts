@@ -1,6 +1,5 @@
-import { projects } from "@/lib/data/projects";
 import { client } from "@/sanity/lib/client";
-import { articlesForSitemapQuery } from "@/sanity/lib/queries";
+import { articlesForSitemapQuery, projectsForSitemapQuery } from "@/sanity/lib/queries";
 import type { MetadataRoute } from "next";
 
 const base = "https://garaadsystems.com";
@@ -17,9 +16,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
   ];
 
-  const projectRoutes: MetadataRoute.Sitemap = projects.map((p) => ({
-    url: `${base}/projects/${p.slug}`,
-    lastModified: now,
+  const projects = await client.fetch(projectsForSitemapQuery);
+  const projectRoutes: MetadataRoute.Sitemap = projects.map((p: any) => ({
+    url: `${base}/projects/${p.slug.current}`,
+    lastModified: p._updatedAt ? new Date(p._updatedAt) : now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

@@ -1,18 +1,22 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { projects } from "@/lib/data/projects";
+import Navbar from "@/components/Navbar";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import { projectBySlugQuery, projectsQuery } from "@/sanity/lib/queries";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 type Props = { params: { slug: string } };
 
-export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+export async function generateStaticParams() {
+  const projects = await client.fetch(projectsQuery);
+  return projects.map((p: any) => ({ slug: p.slug.current }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const project = projects.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const project = await client.fetch(projectBySlugQuery, { slug: params.slug });
   if (!project) return {};
   return {
     title: `${project.name} — Garaad Systems`,
@@ -20,11 +24,12 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function ProjectPage({ params }: Props) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: Props) {
+  const project = await client.fetch(projectBySlugQuery, { slug: params.slug });
   if (!project) notFound();
 
-  const related = projects.filter((p) => p.slug !== project.slug).slice(0, 2);
+  const allProjects = await client.fetch(projectsQuery);
+  const related = allProjects.filter((p: any) => p.slug.current !== project.slug.current).slice(0, 2);
 
   return (
     <>
@@ -202,14 +207,26 @@ export default function ProjectPage({ params }: Props) {
                 </Link>
               </div>
               <div className="grid md:grid-cols-2 gap-5">
-                {related.map((p) => (
+                {related.map((p: any) => (
                   <Link
-                    key={p.slug}
-                    href={`/projects/${p.slug}`}
+                    key={p.slug.current}
+                    href={`/projects/${p.slug.current}`}
                     className="group bg-white border border-gray-100 rounded-2xl p-7 hover:border-gray-200 hover:shadow-xl hover:shadow-gray-100 transition-all duration-300 block"
                   >
                     <div className="flex items-start justify-between mb-4">
-                      {p.logo}
+                      {p.logo ? (
+                        <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center shrink-0 overflow-hidden">
+                          <Image
+                            src={urlFor(p.logo).width(48).height(48).url()}
+                            alt={p.name}
+                            width={48}
+                            height={48}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center shrink-0" />
+                      )}
                       <span className="text-xs font-semibold text-gray-400 bg-gray-50 px-3 py-1.5 rounded-full">
                         {p.category}
                       </span>

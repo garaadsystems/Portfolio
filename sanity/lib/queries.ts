@@ -35,3 +35,45 @@ export const articlesForSitemapQuery = groq`
     _updatedAt,
   }
 `
+
+export const projectsQuery = groq`
+  *[_type == "project"] | order(_createdAt desc) {
+    _id,
+    name,
+    slug,
+    client,
+    category,
+    description,
+    featured,
+    outcomes,
+    deliverables,
+    tags,
+    logo,
+  }
+`
+
+export const projectBySlugQuery = groq`
+  *[_type == "project" && slug.current == $slug][0] {
+    _id,
+    name,
+    slug,
+    client,
+    category,
+    description,
+    detail,
+    approach,
+    featured,
+    outcomes,
+    deliverables,
+    tags,
+    logo,
+    screenshot,
+  }
+`
+
+export const projectsForSitemapQuery = groq`
+  *[_type == "project"] {
+    slug,
+    _updatedAt,
+  }
+`
