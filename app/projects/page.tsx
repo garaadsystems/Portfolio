@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { projects } from "@/lib/data/projects";
+import Navbar from "@/components/Navbar";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import { projectsQuery } from "@/sanity/lib/queries";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Projects — Garaad Systems",
   description:
     "Portfolio of digital solutions delivered for public institutions and organizations across Ethiopia and the Horn of Africa.",
 };
-
-const featured = projects.find((p) => p.featured)!;
-const rest = projects.filter((p) => !p.featured);
 
 const stats = [
   { value: "20+", label: "Projects Delivered" },
@@ -20,7 +20,21 @@ const stats = [
   { value: "5+", label: "Years of Experience" },
 ];
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const projects = await client.fetch(projectsQuery);
+  const featured = projects.find((p: any) => p.featured);
+  const rest = projects.filter((p: any) => !p.featured);
+
+  if (!featured) {
+    return (
+      <>
+        <Navbar />
+        <main>Loading projects...</main>
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar />
@@ -60,7 +74,7 @@ export default function ProjectsPage() {
               Featured Case Study
             </p>
             <Link
-              href={`/projects/${featured.slug}`}
+              href={`/projects/${featured.slug.current}`}
               className="group block bg-[#F7F8FA] rounded-2xl border border-gray-100 overflow-hidden hover:border-gray-200 hover:shadow-2xl hover:shadow-gray-100 transition-all duration-300"
             >
               <div className="grid md:grid-cols-2">
@@ -78,7 +92,7 @@ export default function ProjectsPage() {
                     {featured.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {featured.tags.map((tag) => (
+                    {featured.tags.map((tag: string) => (
                       <span
                         key={tag}
                         className="text-[11px] font-medium text-gray-500 bg-white border border-gray-200 px-2.5 py-1 rounded-lg"
@@ -93,7 +107,7 @@ export default function ProjectsPage() {
                     Key Outcomes
                   </p>
                   <ul className="space-y-4">
-                    {featured.outcomes.slice(0, 5).map((outcome) => (
+                    {featured.outcomes.slice(0, 5).map((outcome: string) => (
                       <li key={outcome} className="flex items-start gap-3">
                         <svg
                           width="14"
@@ -141,14 +155,26 @@ export default function ProjectsPage() {
               </span>
             </div>
             <div className="grid md:grid-cols-2 gap-5">
-              {rest.map((project) => (
+              {rest.map((project: any) => (
                 <Link
-                  key={project.slug}
-                  href={`/projects/${project.slug}`}
+                  key={project.slug.current}
+                  href={`/projects/${project.slug.current}`}
                   className="group border border-gray-100 rounded-2xl p-8 hover:border-gray-200 hover:shadow-2xl hover:shadow-gray-100 transition-all duration-300 block"
                 >
                   <div className="flex items-start justify-between mb-5">
-                    {project.logo}
+                    {project.logo ? (
+                      <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center shrink-0 overflow-hidden">
+                        <Image
+                          src={urlFor(project.logo).width(48).height(48).url()}
+                          alt={project.name}
+                          width={48}
+                          height={48}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center shrink-0" />
+                    )}
                     <span className="text-xs font-semibold text-gray-400 bg-gray-50 px-3 py-1.5 rounded-full">
                       {project.category}
                     </span>
@@ -161,7 +187,7 @@ export default function ProjectsPage() {
                   </p>
                   <div className="flex items-center justify-between">
                     <div className="flex flex-wrap gap-2">
-                      {project.tags.slice(0, 3).map((tag) => (
+                      {project.tags.slice(0, 3).map((tag: string) => (
                         <span
                           key={tag}
                           className="text-[11px] font-medium text-gray-500 bg-gray-50 border border-gray-100 px-2.5 py-1 rounded-lg"

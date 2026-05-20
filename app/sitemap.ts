@@ -1,10 +1,10 @@
+import { client } from "@/sanity/lib/client";
+import { articlesForSitemapQuery, projectsForSitemapQuery } from "@/sanity/lib/queries";
 import type { MetadataRoute } from "next";
-import { projects } from "@/lib/data/projects";
-import { articles } from "@/lib/data/insights";
 
 const base = "https://garaadsystems.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -16,17 +16,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
   ];
 
-  const projectRoutes: MetadataRoute.Sitemap = projects.map((p) => ({
-    url: `${base}/projects/${p.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
+  const projects = await client.fetch(projectsForSitemapQuery);
+  const projectRoutes: MetadataRoute.Sitemap = projects.map((p: any) => ({
+    url: `${base}/projects/${p.slug.current}`,
+    lastModified: p._updatedAt ? new Date(p._updatedAt) : now,
+    changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  const insightRoutes: MetadataRoute.Sitemap = articles.map((a) => ({
-    url: `${base}/insights/${a.slug}`,
-    lastModified: now,
-    changeFrequency: "yearly",
+  const articles = await client.fetch(articlesForSitemapQuery);
+  const insightRoutes: MetadataRoute.Sitemap = articles.map((a: any) => ({
+    url: `${base}/insights/${a.slug.current}`,
+    lastModified: a._updatedAt ? new Date(a._updatedAt) : now,
+    changeFrequency: "yearly" as const,
     priority: 0.6,
   }));
 

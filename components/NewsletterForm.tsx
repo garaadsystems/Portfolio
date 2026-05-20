@@ -1,7 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
 import { subscribeNewsletter, type NewsletterState } from "@/app/actions/newsletter";
+import { useFormState, useFormStatus } from "react-dom";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -48,6 +48,9 @@ export default function NewsletterForm() {
       <SubmitButton />
       {state.error && (
         <p className="text-xs text-red-400 mt-1 sm:absolute sm:translate-y-14">{state.error}</p>
+      )}
+      {state.message && (
+        <p className="text-xs text-[#8CC220] mt-1 sm:absolute sm:translate-y-14">{state.message}</p>
       )}
     </form>
   );
