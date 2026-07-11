@@ -13,6 +13,8 @@ export const metadata: Metadata = {
     "Portfolio of digital solutions delivered for public institutions and organizations across Ethiopia and the Horn of Africa.",
 };
 
+export const revalidate = 60;
+
 const stats = [
   { value: "20+", label: "Projects Delivered" },
   { value: "8+", label: "Institutions Served" },

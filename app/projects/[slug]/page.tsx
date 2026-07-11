@@ -10,6 +10,8 @@ import { notFound } from "next/navigation";
 
 type Props = { params: { slug: string } };
 
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   const projects = await client.fetch(projectsQuery);
   return projects.map((p: any) => ({ slug: p.slug.current }));

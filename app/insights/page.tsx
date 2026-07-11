@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     "Perspectives, technical guides, and case studies from Garaad Systems on e-government, digital transformation, and institutional modernization in Ethiopia and the Horn of Africa.",
 };
 
+export const revalidate = 60;
+
 const categoryColors: Record<string, string> = {
   Perspective: "bg-[#8CC220]/10 text-[#5a9010]",
   "Case Study": "bg-blue-50 text-blue-600",
