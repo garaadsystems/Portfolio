@@ -34,24 +34,15 @@ const categoryColors: Record<string, string> = {
 };
 
 const portableTextComponents = {
-  types: {
-    block: ({ value }: any) => {
-      const { style = "normal", children, level } = value;
-      switch (style) {
-        case "h2":
-          return <h2 className="text-2xl font-bold mt-8 mb-4">{children}</h2>;
-        case "h3":
-          return <h3 className="text-xl font-bold mt-6 mb-3">{children}</h3>;
-        case "blockquote":
-          return (
-            <blockquote className="border-l-4 border-[#8CC220] pl-6 py-4 my-6 italic text-gray-600">
-              {children}
-            </blockquote>
-          );
-        default:
-          return <p className="mb-4 leading-relaxed">{children}</p>;
-      }
-    },
+  block: {
+    h2: ({ children }: any) => <h2 className="text-2xl font-bold mt-8 mb-4">{children}</h2>,
+    h3: ({ children }: any) => <h3 className="text-xl font-bold mt-6 mb-3">{children}</h3>,
+    blockquote: ({ children }: any) => (
+      <blockquote className="border-l-4 border-[#8CC220] pl-6 py-4 my-6 italic text-gray-600">
+        {children}
+      </blockquote>
+    ),
+    normal: ({ children }: any) => <p className="mb-4 leading-relaxed">{children}</p>,
   },
   marks: {
     strong: ({ children }: any) => <strong className="font-bold">{children}</strong>,

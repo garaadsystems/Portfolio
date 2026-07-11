@@ -10,7 +10,7 @@ export const articlesQuery = groq`
     readTime,
     date,
     featured,
-    topics,
+    "topics": coalesce(topics, []),
   }
 `
 
@@ -24,7 +24,7 @@ export const articleBySlugQuery = groq`
     readTime,
     date,
     featured,
-    topics,
+    "topics": coalesce(topics, []),
     content,
   }
 `
@@ -45,9 +45,9 @@ export const projectsQuery = groq`
     category,
     description,
     featured,
-    outcomes,
-    deliverables,
-    tags,
+    "outcomes": coalesce(outcomes, []),
+    "deliverables": coalesce(deliverables, []),
+    "tags": coalesce(tags, []),
     logo,
   }
 `
@@ -63,9 +63,9 @@ export const projectBySlugQuery = groq`
     detail,
     approach,
     featured,
-    outcomes,
-    deliverables,
-    tags,
+    "outcomes": coalesce(outcomes, []),
+    "deliverables": coalesce(deliverables, []),
+    "tags": coalesce(tags, []),
     logo,
     screenshot,
   }
