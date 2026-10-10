@@ -64,7 +64,7 @@ export default function CTA() {
           <span className="hidden sm:block w-1 h-1 rounded-full bg-[#0A1628]/30" />
           <span>+251 91 550 6573</span>
           <span className="hidden sm:block w-1 h-1 rounded-full bg-[#0A1628]/30" />
-          <span>Burj Hassen Wali, Jigjiga, Ethiopia</span>
+          <span>02, Burj Hassen Wali, Jigjiga, Somali Region, Ethiopia</span>
         </div>
       </div>
     </section>
