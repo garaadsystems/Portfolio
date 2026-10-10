@@ -36,7 +36,7 @@ export default function Projects() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <span className="text-xs font-bold text-[#0A1628] uppercase tracking-widest mb-3 block">
+            <span className="text-xs font-bold text-navy uppercase tracking-widest mb-3 block">
               Our Work
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-[1.1]">
@@ -89,7 +89,7 @@ export default function Projects() {
                 </span>
               </div>
 
-              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#0A1628] transition-colors">{project.name}</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-navy transition-colors">{project.name}</h3>
               <p className="text-sm text-gray-500 leading-relaxed mb-6">{project.description}</p>
 
               <div className="flex items-center justify-between">
@@ -104,7 +104,7 @@ export default function Projects() {
                   ))}
                 </div>
                 <span
-                  className="text-sm text-[#0A1628] font-semibold group-hover:text-[#78AB14] inline-flex items-center gap-1.5 shrink-0 ml-4 transition-colors"
+                  className="text-sm text-navy font-semibold group-hover:text-brand-dark inline-flex items-center gap-1.5 shrink-0 ml-4 transition-colors"
                 >
                   View
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

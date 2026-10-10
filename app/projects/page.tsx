@@ -18,7 +18,6 @@ export const revalidate = 60;
 const stats = [
   { value: "20+", label: "Projects Delivered" },
   { value: "8+", label: "Institutions Served" },
-  { value: "100%", label: "On-Time Delivery" },
   { value: "5+", label: "Years of Experience" },
 ];
 
@@ -42,15 +41,7 @@ export default async function ProjectsPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[#0A1628] pt-36 pb-24 px-6 relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.05]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#8CC220 1px, transparent 1px), linear-gradient(to right, #8CC220 1px, transparent 1px)",
-              backgroundSize: "72px 72px",
-            }}
-          />
+        <section className="bg-navy pt-36 pb-24 px-6 relative overflow-hidden">
           <div className="relative max-w-6xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 mb-6">
               <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">
@@ -60,7 +51,7 @@ export default async function ProjectsPage() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.04] tracking-tight mb-6 max-w-3xl">
               Projects That
               <br />
-              <span className="text-[#8CC220]">Make an Impact</span>
+              <span className="text-brand">Make an Impact</span>
             </h1>
             <p className="text-white/50 text-lg max-w-2xl leading-relaxed">
               A portfolio of digital platforms, government systems, and institutional solutions
@@ -72,7 +63,7 @@ export default async function ProjectsPage() {
         {/* Featured Case Study */}
         <section className="py-24 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
-            <p className="text-[10px] font-bold text-[#0A1628]/40 uppercase tracking-widest mb-6">
+            <p className="text-[10px] font-bold text-navy/40 uppercase tracking-widest mb-6">
               Featured Case Study
             </p>
             <Link
@@ -81,13 +72,13 @@ export default async function ProjectsPage() {
             >
               <div className="grid md:grid-cols-2">
                 <div className="p-10 md:p-14">
-                  <span className="text-[10px] font-bold text-[#8CC220] bg-[#0A1628] rounded-lg px-2.5 py-1 mb-6 inline-block uppercase tracking-widest">
+                  <span className="text-[10px] font-bold text-brand bg-navy rounded-lg px-2.5 py-1 mb-6 inline-block uppercase tracking-widest">
                     {featured.category}
                   </span>
-                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-3 group-hover:text-[#0A1628]">
+                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-3 group-hover:text-navy">
                     {featured.name}
                   </h2>
-                  <p className="text-xs font-semibold text-[#0A1628]/50 uppercase tracking-widest mb-5">
+                  <p className="text-xs font-semibold text-navy/50 uppercase tracking-widest mb-5">
                     {featured.client}
                   </p>
                   <p className="text-sm text-gray-500 leading-relaxed mb-8">
@@ -104,7 +95,7 @@ export default async function ProjectsPage() {
                     ))}
                   </div>
                 </div>
-                <div className="bg-[#0A1628] p-10 md:p-14">
+                <div className="bg-navy p-10 md:p-14">
                   <p className="text-[10px] font-bold text-white/35 uppercase tracking-widest mb-7">
                     Key Outcomes
                   </p>
@@ -130,7 +121,7 @@ export default async function ProjectsPage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-8 inline-flex items-center gap-2 text-[#8CC220] text-sm font-semibold group-hover:gap-3 transition-all">
+                  <div className="mt-8 inline-flex items-center gap-2 text-brand text-sm font-semibold group-hover:gap-3 transition-all">
                     Read case study
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                       <path
@@ -152,7 +143,7 @@ export default async function ProjectsPage() {
         <section className="pb-24 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="mb-10">
-              <span className="text-[10px] font-bold text-[#0A1628]/40 uppercase tracking-widest">
+              <span className="text-[10px] font-bold text-navy/40 uppercase tracking-widest">
                 All Projects
               </span>
             </div>
@@ -181,7 +172,7 @@ export default async function ProjectsPage() {
                       {project.category}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#0A1628]">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-navy">
                     {project.name}
                   </h3>
                   <p className="text-sm text-gray-500 leading-relaxed mb-5">
@@ -198,7 +189,7 @@ export default async function ProjectsPage() {
                         </span>
                       ))}
                     </div>
-                    <span className="text-sm text-[#0A1628] font-semibold group-hover:text-[#8CC220] inline-flex items-center gap-1.5 shrink-0 ml-4 transition-colors">
+                    <span className="text-sm text-navy font-semibold group-hover:text-brand inline-flex items-center gap-1.5 shrink-0 ml-4 transition-colors">
                       View
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                         <path
@@ -220,13 +211,13 @@ export default async function ProjectsPage() {
         {/* Stats */}
         <section className="py-20 px-6 bg-[#F7F8FA] border-y border-gray-100">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-200 rounded-2xl overflow-hidden border border-gray-200">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-200 rounded-2xl overflow-hidden border border-gray-200">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
                   className="bg-white px-8 py-10 text-center hover:bg-[#F7F8FA] transition-colors"
                 >
-                  <div className="text-4xl font-black text-[#0A1628] mb-1.5">{stat.value}</div>
+                  <div className="text-4xl font-black text-navy mb-1.5">{stat.value}</div>
                   <div className="text-xs text-gray-400 font-medium">{stat.label}</div>
                 </div>
               ))}
@@ -235,27 +226,19 @@ export default async function ProjectsPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 px-6 bg-[#8CC220] relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.06]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#0A1628 1px, transparent 1px), linear-gradient(to right, #0A1628 1px, transparent 1px)",
-              backgroundSize: "72px 72px",
-            }}
-          />
+        <section className="py-24 px-6 bg-brand relative overflow-hidden">
           <div className="relative max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-black text-[#0A1628] mb-5 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-navy mb-5 tracking-tight">
               Ready to Build Something That Matters?
             </h2>
-            <p className="text-[#0A1628]/60 mb-10 max-w-md mx-auto leading-relaxed">
+            <p className="text-navy/80 mb-10 max-w-md mx-auto leading-relaxed">
               Tell us about your institution&apos;s challenge and we&apos;ll show you how we can
               solve it.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#0A1628] text-white text-sm px-8 py-4 rounded-xl font-semibold hover:bg-[#0d1f3a] transition-colors"
+                className="inline-flex items-center gap-2 bg-navy text-white text-sm px-8 py-4 rounded-xl font-semibold hover:bg-navy-light transition-colors"
               >
                 Start a Project
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -270,7 +253,7 @@ export default async function ProjectsPage() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 bg-[#0A1628]/10 border border-[#0A1628]/20 text-[#0A1628] text-sm px-8 py-4 rounded-xl font-medium hover:bg-[#0A1628]/20 transition-colors"
+                className="inline-flex items-center gap-2 bg-navy/10 border border-navy/20 text-navy text-sm px-8 py-4 rounded-xl font-medium hover:bg-navy/20 transition-colors"
               >
                 Explore Services
               </Link>

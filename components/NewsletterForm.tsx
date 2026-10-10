@@ -9,7 +9,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="bg-[#8CC220] text-[#0A1628] text-sm px-6 py-3.5 rounded-xl font-bold hover:bg-[#78AB14] transition-colors shrink-0 disabled:opacity-60 disabled:cursor-not-allowed"
+      className="bg-brand text-navy text-sm px-6 py-3.5 rounded-xl font-bold hover:bg-brand-dark transition-colors shrink-0 disabled:opacity-60 disabled:cursor-not-allowed"
     >
       {pending ? "Subscribing…" : "Subscribe"}
     </button>
@@ -21,7 +21,7 @@ export default function NewsletterForm() {
 
   if (state.success) {
     return (
-      <div className="flex items-center gap-3 max-w-sm mx-auto bg-white/8 border border-white/15 rounded-xl px-5 py-4">
+      <div className="flex items-center gap-3 max-w-sm mx-auto bg-white/[0.08] border border-white/15 rounded-xl px-5 py-4">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="shrink-0">
           <path
             d="M3 9l4 4 8-8"
@@ -43,14 +43,14 @@ export default function NewsletterForm() {
         name="email"
         placeholder="your@email.com"
         required
-        className="flex-1 bg-white/8 border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#8CC220]/50 transition-colors"
+        className="flex-1 bg-white/[0.08] border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-brand/50 transition-colors"
       />
       <SubmitButton />
       {state.error && (
         <p className="text-xs text-red-400 mt-1 sm:absolute sm:translate-y-14">{state.error}</p>
       )}
       {state.message && (
-        <p className="text-xs text-[#8CC220] mt-1 sm:absolute sm:translate-y-14">{state.message}</p>
+        <p className="text-xs text-brand mt-1 sm:absolute sm:translate-y-14">{state.message}</p>
       )}
     </form>
   );

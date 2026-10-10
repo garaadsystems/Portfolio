@@ -99,7 +99,7 @@ const reasons = [
   {
     title: "Government-Grade Expertise",
     description:
-      "We specialize in the specific security, compliance, and reliability requirements of public-sector systems — not general web development applied to government contexts.",
+      "We specialize in the specific security, compliance, and reliability requirements of public-sector systems. This is not general web development applied to government.",
   },
   {
     title: "Founder-Led Architectural Oversight",
@@ -114,12 +114,12 @@ const reasons = [
   {
     title: "High Standards in Documentation",
     description:
-      "We deliver comprehensive technical documentation alongside every system — ensuring your team can operate, maintain, and extend what we build.",
+      "We deliver comprehensive technical documentation alongside every system, so your team can operate, maintain, and extend what we build.",
   },
   {
     title: "Proven Institutional Delivery",
     description:
-      "We have delivered complex institutional systems in full compliance with contractual and technical requirements — on time and to specification.",
+      "We have delivered complex institutional systems in full compliance with contractual and technical requirements, on time and to specification.",
   },
 ];
 
@@ -129,18 +129,10 @@ export default function AboutPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[#0A1628] pt-36 pb-24 px-6 relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.05]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#8CC220 1px, transparent 1px), linear-gradient(to right, #8CC220 1px, transparent 1px)",
-              backgroundSize: "72px 72px",
-            }}
-          />
+        <section className="bg-navy pt-36 pb-24 px-6 relative overflow-hidden">
           <div className="relative max-w-6xl mx-auto">
             <div className="inline-flex items-center gap-2.5 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#8CC220] block" />
+              <span className="w-1.5 h-1.5 rounded-full bg-brand block" />
               <span className="text-xs text-white/60 font-medium tracking-wide">
                 Jigjiga, Somali Region, Ethiopia
               </span>
@@ -148,10 +140,10 @@ export default function AboutPage() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.04] tracking-tight mb-7 max-w-4xl">
               Modernizing Institutions,
               <br />
-              <span className="text-[#8CC220]">Powering Public Services</span>
+              <span className="text-brand">Powering Public Services</span>
             </h1>
             <p className="text-white/55 text-lg max-w-2xl leading-relaxed">
-              We are a technology and digital consultancy born in Jigjiga, Ethiopia — built to deliver
+              We are a technology and digital consultancy born in Jigjiga, Ethiopia, built to deliver
               the government-grade software systems that the Horn of Africa&apos;s institutions need to
               serve their communities effectively.
             </p>
@@ -162,8 +154,8 @@ export default function AboutPage() {
         <section className="py-24 px-6 bg-white">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
             <div className="bg-[#F7F8FA] rounded-2xl p-10 border border-gray-100">
-              <div className="inline-flex items-center gap-2 bg-[#0A1628]/5 border border-[#0A1628]/10 rounded-full px-3 py-1.5 mb-6">
-                <span className="text-[10px] font-bold text-[#0A1628]/50 uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 bg-navy/5 border border-navy/10 rounded-full px-3 py-1.5 mb-6">
+                <span className="text-[10px] font-bold text-navy/50 uppercase tracking-widest">
                   Our Mission
                 </span>
               </div>
@@ -176,9 +168,9 @@ export default function AboutPage() {
                 services faster, more transparent, and more accessible for the communities they serve.
               </p>
             </div>
-            <div className="bg-[#0A1628] rounded-2xl p-10">
-              <div className="inline-flex items-center gap-2 bg-[#8CC220]/10 border border-[#8CC220]/20 rounded-full px-3 py-1.5 mb-6">
-                <span className="text-[10px] font-bold text-[#8CC220]/80 uppercase tracking-widest">
+            <div className="bg-navy rounded-2xl p-10">
+              <div className="inline-flex items-center gap-2 bg-brand/10 border border-brand/20 rounded-full px-3 py-1.5 mb-6">
+                <span className="text-[10px] font-bold text-brand/80 uppercase tracking-widest">
                   Our Vision
                 </span>
               </div>
@@ -187,7 +179,7 @@ export default function AboutPage() {
               </h2>
               <p className="text-white/45 text-sm leading-relaxed">
                 We envision a Horn of Africa where every public institution operates with the same
-                digital efficiency as the world&apos;s most capable governments — where licensing is
+                digital efficiency as the world&apos;s most capable governments: where licensing is
                 instant, registration is seamless, and public service is a genuine public good.
               </p>
             </div>
@@ -198,7 +190,7 @@ export default function AboutPage() {
         <section className="py-24 px-6 bg-[#F7F8FA]">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-xs font-bold text-[#0A1628] uppercase tracking-widest mb-3 block">
+              <span className="text-xs font-bold text-navy uppercase tracking-widest mb-3 block">
                 Our Story
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-[1.1] tracking-tight mb-6">
@@ -212,14 +204,14 @@ export default function AboutPage() {
                   different era.
                 </p>
                 <p>
-                  Based in Jigjiga — the capital of Ethiopia&apos;s Somali Region — we positioned ourselves
+                  Based in Jigjiga, the capital of Ethiopia&apos;s Somali Region, we positioned ourselves
                   where the need was greatest. This proximity to our clients shapes how we work: we
                   understand the operational realities, institutional constraints, and technical
                   environments that outside firms routinely underestimate.
                 </p>
                 <p>
-                  Our first major government engagement — the upgrade of the Construction Licence
-                  Registration System for the Somali Regional Government — validated our model. We
+                  Our first major government engagement, upgrading the Construction Licence
+                  Registration System for the Somali Regional Government, validated our model. We
                   delivered a modernized, compliant digital platform on time and to specification,
                   building the track record we continue to strengthen with every project.
                 </p>
@@ -237,7 +229,7 @@ export default function AboutPage() {
                   key={item.label}
                   className="flex items-start gap-5 bg-white rounded-xl p-5 border border-gray-100"
                 >
-                  <div className="text-[10px] font-bold text-[#0A1628]/35 uppercase tracking-widest w-20 shrink-0 pt-0.5">
+                  <div className="text-[10px] font-bold text-navy/35 uppercase tracking-widest w-20 shrink-0 pt-0.5">
                     {item.label}
                   </div>
                   <div className="text-sm font-semibold text-gray-800">{item.value}</div>
@@ -251,7 +243,7 @@ export default function AboutPage() {
         <section className="py-24 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <span className="text-xs font-bold text-[#0A1628] uppercase tracking-widest mb-3 block">
+              <span className="text-xs font-bold text-navy uppercase tracking-widest mb-3 block">
                 How We&apos;re Built
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-[1.1]">
@@ -259,7 +251,7 @@ export default function AboutPage() {
               </h2>
               <p className="text-gray-500 text-base mt-5 max-w-xl mx-auto leading-relaxed">
                 A lean, expert-driven structure that combines in-house specialists with project-based
-                developers — delivering flexibility without sacrificing architectural integrity.
+                developers. It gives us flexibility without losing architectural oversight.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-5">
@@ -314,9 +306,9 @@ export default function AboutPage() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="bg-[#F7F8FA] rounded-2xl p-8 border border-gray-100 group hover:border-[#0A1628]/20 transition-colors"
+                  className="bg-[#F7F8FA] rounded-2xl p-8 border border-gray-100 group hover:border-navy/20 transition-colors"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-[#0A1628]/8 flex items-center justify-center mb-6">
+                  <div className="w-11 h-11 rounded-xl bg-navy/[0.08] flex items-center justify-center mb-6">
                     {item.icon}
                   </div>
                   <h3 className="text-base font-bold text-gray-900 mb-3">{item.title}</h3>
@@ -331,7 +323,7 @@ export default function AboutPage() {
         <section className="py-24 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-2xl mb-14">
-              <span className="text-xs font-bold text-[#0A1628] uppercase tracking-widest mb-3 block">
+              <span className="text-xs font-bold text-navy uppercase tracking-widest mb-3 block">
                 The People Behind the Work
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-[1.1] tracking-tight">
@@ -339,7 +331,7 @@ export default function AboutPage() {
               </h2>
               <p className="text-gray-500 text-sm leading-relaxed mt-5">
                 Our core team combines deep institutional knowledge with hands-on engineering
-                experience — giving every client direct access to senior expertise from day one.
+                experience, so every client works directly with senior people from day one.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-5">
@@ -349,35 +341,35 @@ export default function AboutPage() {
                   name: "Abdifatah Ibrahim",
                   title: "Founder & Lead Architect",
                   bio: "Leads architecture and technical strategy across all client engagements. Specializes in government-grade systems design, security architecture, and long-term institutional software delivery.",
-                  bg: "bg-[#0A1628]",
-                  text: "text-[#8CC220]",
+                  bg: "bg-navy",
+                  text: "text-brand",
                 },
                 {
                   initial: "—",
                   name: "Senior Engineers",
                   title: "In-House Technical Team",
-                  bio: "Our in-house engineers bring deep expertise in full-stack development, systems integration, and workflow automation — handling the critical build and review phases of every engagement.",
-                  bg: "bg-[#8CC220]",
-                  text: "text-[#0A1628]",
+                  bio: "Our in-house engineers bring deep expertise in full-stack development, systems integration, and workflow automation, and handle the critical build and review phases of every engagement.",
+                  bg: "bg-brand",
+                  text: "text-navy",
                 },
                 {
                   initial: "—",
                   name: "Project Specialists",
                   title: "Vetted Project-Based Developers",
-                  bio: "For larger engagements, we bring in vetted specialist developers from our trusted network — scaling capacity precisely to project requirements without compromising architectural oversight.",
+                  bio: "For larger engagements, we bring in vetted specialist developers from our trusted network, scaling capacity to the project without giving up architectural oversight.",
                   bg: "bg-gray-100",
                   text: "text-gray-500",
                 },
               ].map((member) => (
                 <div
                   key={member.name}
-                  className="bg-[#F7F8FA] border border-gray-100 rounded-2xl p-8 hover:border-[#0A1628]/20 hover:shadow-xl hover:shadow-gray-100 transition-all duration-300"
+                  className="bg-[#F7F8FA] border border-gray-100 rounded-2xl p-8 hover:border-navy/20 hover:shadow-xl hover:shadow-gray-100 transition-all duration-300"
                 >
                   <div className={`w-14 h-14 rounded-xl ${member.bg} flex items-center justify-center mb-6`}>
                     <span className={`text-sm font-black ${member.text}`}>{member.initial}</span>
                   </div>
                   <h3 className="text-base font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-xs font-semibold text-[#0A1628]/50 uppercase tracking-widest mb-4">
+                  <p className="text-xs font-semibold text-navy/50 uppercase tracking-widest mb-4">
                     {member.title}
                   </p>
                   <p className="text-sm text-gray-500 leading-relaxed">{member.bio}</p>
@@ -388,7 +380,7 @@ export default function AboutPage() {
         </section>
 
         {/* Values */}
-        <section className="py-24 px-6 bg-[#0A1628]">
+        <section className="py-24 px-6 bg-navy">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <span className="text-xs font-bold text-white/35 uppercase tracking-widest mb-3 block">
@@ -402,9 +394,9 @@ export default function AboutPage() {
               {values.map((v) => (
                 <div
                   key={v.title}
-                  className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors"
+                  className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/[0.08] transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#8CC220]/10 border border-[#8CC220]/20 flex items-center justify-center mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center mb-5">
                     {v.icon}
                   </div>
                   <h3 className="text-base font-bold text-white mb-2.5">{v.title}</h3>
@@ -416,21 +408,13 @@ export default function AboutPage() {
         </section>
 
         {/* Technical Capabilities */}
-        <section className="py-24 px-6 bg-[#8CC220] relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.06]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#0A1628 1px, transparent 1px), linear-gradient(to right, #0A1628 1px, transparent 1px)",
-              backgroundSize: "72px 72px",
-            }}
-          />
+        <section className="py-24 px-6 bg-brand relative overflow-hidden">
           <div className="relative max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <span className="text-xs font-bold text-[#0A1628]/55 uppercase tracking-widest mb-3 block">
+              <span className="text-xs font-bold text-navy/80 uppercase tracking-widest mb-3 block">
                 Technical Capabilities
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-[#0A1628] tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-black text-navy tracking-tight">
                 Built for the Demands of Government
               </h2>
             </div>
@@ -438,13 +422,13 @@ export default function AboutPage() {
               {capabilities.map((cap, i) => (
                 <div
                   key={cap.title}
-                  className="bg-[#0A1628]/[0.07] border border-[#0A1628]/15 rounded-2xl p-6 hover:bg-[#0A1628]/[0.12] hover:border-[#0A1628]/25 transition-all duration-200"
+                  className="bg-navy/[0.07] border border-navy/15 rounded-2xl p-6 hover:bg-navy/[0.12] hover:border-navy/25 transition-all duration-200"
                 >
-                  <span className="text-xs font-bold text-[#8CC220] bg-[#0A1628] rounded-lg px-2.5 py-1 mb-4 inline-block">
+                  <span className="text-xs font-bold text-brand bg-navy rounded-lg px-2.5 py-1 mb-4 inline-block">
                     0{i + 1}
                   </span>
-                  <h3 className="text-sm font-bold text-[#0A1628] mb-2.5">{cap.title}</h3>
-                  <p className="text-xs text-[#0A1628]/60 leading-relaxed">{cap.description}</p>
+                  <h3 className="text-sm font-bold text-navy mb-2.5">{cap.title}</h3>
+                  <p className="text-xs text-navy/80 leading-relaxed">{cap.description}</p>
                 </div>
               ))}
             </div>
@@ -455,7 +439,7 @@ export default function AboutPage() {
         <section className="py-24 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14">
-              <span className="text-xs font-bold text-[#0A1628] uppercase tracking-widest mb-3 block">
+              <span className="text-xs font-bold text-navy uppercase tracking-widest mb-3 block">
                 Technologies We Work With
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-[1.1]">
@@ -470,13 +454,13 @@ export default function AboutPage() {
                 { category: "Infrastructure", items: ["Docker", "GitHub Actions", "Linux", "Nginx"] },
               ].map((group) => (
                 <div key={group.category} className="bg-[#F7F8FA] rounded-2xl p-6 border border-gray-100">
-                  <p className="text-[10px] font-bold text-[#0A1628]/40 uppercase tracking-widest mb-4">
+                  <p className="text-[10px] font-bold text-navy/40 uppercase tracking-widest mb-4">
                     {group.category}
                   </p>
                   <ul className="space-y-2.5">
                     {group.items.map((item) => (
                       <li key={item} className="flex items-center gap-2.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#8CC220] shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
                         <span className="text-sm font-medium text-gray-700">{item}</span>
                       </li>
                     ))}
@@ -491,7 +475,7 @@ export default function AboutPage() {
         <section className="py-24 px-6 bg-[#F7F8FA]">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-2xl mb-14">
-              <span className="text-xs font-bold text-[#0A1628] uppercase tracking-widest mb-3 block">
+              <span className="text-xs font-bold text-navy uppercase tracking-widest mb-3 block">
                 Why Clients Choose Us
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-[1.1] tracking-tight">
@@ -502,9 +486,9 @@ export default function AboutPage() {
               {reasons.map((reason, i) => (
                 <div
                   key={reason.title}
-                  className="bg-white rounded-2xl p-8 border border-gray-100 flex gap-5 hover:border-[#0A1628]/20 hover:shadow-lg hover:shadow-gray-100 transition-all duration-300"
+                  className="bg-white rounded-2xl p-8 border border-gray-100 flex gap-5 hover:border-navy/20 hover:shadow-lg hover:shadow-gray-100 transition-all duration-300"
                 >
-                  <span className="text-xs font-bold text-[#0A1628]/25 mt-0.5 w-6 shrink-0">
+                  <span className="text-xs font-bold text-navy/25 mt-0.5 w-6 shrink-0">
                     0{i + 1}
                   </span>
                   <div>
@@ -518,26 +502,18 @@ export default function AboutPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 px-6 bg-[#8CC220] relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.06]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#0A1628 1px, transparent 1px), linear-gradient(to right, #0A1628 1px, transparent 1px)",
-              backgroundSize: "72px 72px",
-            }}
-          />
+        <section className="py-24 px-6 bg-brand relative overflow-hidden">
           <div className="relative max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-black text-[#0A1628] mb-5 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-navy mb-5 tracking-tight">
               Ready to Work Together?
             </h2>
-            <p className="text-[#0A1628]/60 mb-10 max-w-md mx-auto leading-relaxed">
+            <p className="text-navy/80 mb-10 max-w-md mx-auto leading-relaxed">
               Tell us about your institution&apos;s needs and we&apos;ll chart a clear path forward.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#0A1628] text-white text-sm px-8 py-4 rounded-xl font-semibold hover:bg-[#0d1f3a] transition-colors"
+                className="inline-flex items-center gap-2 bg-navy text-white text-sm px-8 py-4 rounded-xl font-semibold hover:bg-navy-light transition-colors"
               >
                 Start a Conversation
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -552,7 +528,7 @@ export default function AboutPage() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 bg-[#0A1628]/10 border border-[#0A1628]/20 text-[#0A1628] text-sm px-8 py-4 rounded-xl font-medium hover:bg-[#0A1628]/20 transition-colors"
+                className="inline-flex items-center gap-2 bg-navy/10 border border-navy/20 text-navy text-sm px-8 py-4 rounded-xl font-medium hover:bg-navy/20 transition-colors"
               >
                 Explore Our Services
               </Link>

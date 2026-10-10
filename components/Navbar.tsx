@@ -33,17 +33,13 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         showDark
           ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200"
-          : "bg-transparent border-b border-white/10"
+          : "bg-transparent border-b border-navy/10"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/">
           <Image
-            src={
-              showDark
-                ? "/logo/lockup/garaad-lockup-navy-2x.png"
-                : "/logo/lockup/garaad-lockup-white-2x.png"
-            }
+            src="/logo/lockup/garaad-lockup-navy-2x.png"
             alt="Garaad Systems"
             width={144}
             height={44}
@@ -65,15 +61,15 @@ export default function Navbar() {
                       ? "text-gray-900 font-semibold"
                       : "text-gray-500 hover:text-gray-900"
                     : active
-                    ? "text-white font-semibold"
-                    : "text-white/70 hover:text-white"
+                    ? "text-navy font-semibold"
+                    : "text-navy/75 hover:text-navy"
                 }`}
               >
                 {item.label}
                 {active && (
                   <span
                     className={`absolute -bottom-1 left-0 right-0 h-0.5 rounded-full ${
-                      showDark ? "bg-[#8CC220]" : "bg-white"
+                      showDark ? "bg-brand" : "bg-navy"
                     }`}
                   />
                 )}
@@ -84,7 +80,7 @@ export default function Navbar() {
 
         <Link
           href="/contact"
-          className="hidden md:inline-flex items-center gap-2 bg-[#0A1628] text-white text-sm px-5 py-2.5 rounded-lg font-bold hover:bg-[#0d1f3a] transition-colors"
+          className="hidden md:inline-flex items-center gap-2 bg-navy text-white text-sm px-5 py-2.5 rounded-lg font-bold hover:bg-navy-light transition-colors"
         >
           Start a Project
         </Link>
@@ -98,14 +94,14 @@ export default function Navbar() {
             {menuOpen ? (
               <path
                 d="M6 6l12 12M6 18L18 6"
-                stroke={showDark ? "#0A1628" : "#ffffff"}
+                stroke="#0A1628"
                 strokeWidth="2"
                 strokeLinecap="round"
               />
             ) : (
               <path
                 d="M4 7h16M4 12h16M4 17h16"
-                stroke={showDark ? "#0A1628" : "#ffffff"}
+                stroke="#0A1628"
                 strokeWidth="2"
                 strokeLinecap="round"
               />
@@ -131,14 +127,14 @@ export default function Navbar() {
               >
                 {item.label}
                 {active && (
-                  <span className="ml-2 inline-block w-1.5 h-1.5 rounded-full bg-[#8CC220] align-middle" />
+                  <span className="ml-2 inline-block w-1.5 h-1.5 rounded-full bg-brand align-middle" />
                 )}
               </Link>
             );
           })}
           <Link
             href="/contact"
-            className="bg-[#0A1628] text-white text-sm px-5 py-3 rounded-lg font-bold text-center"
+            className="bg-navy text-white text-sm px-5 py-3 rounded-lg font-bold text-center"
             onClick={() => setMenuOpen(false)}
           >
             Start a Project

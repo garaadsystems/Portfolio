@@ -19,7 +19,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="w-full inline-flex items-center justify-center gap-2 bg-[#0A1628] text-white text-sm px-8 py-4 rounded-xl font-semibold hover:bg-[#0d1f3a] disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+      className="w-full inline-flex items-center justify-center gap-2 bg-navy text-white text-sm px-8 py-4 rounded-xl font-semibold hover:bg-navy-light disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
     >
       {pending ? (
         <>
@@ -67,7 +67,7 @@ function SubmitButton() {
 function SuccessMessage() {
   return (
     <div className="bg-[#F7F8FA] rounded-2xl border border-gray-100 p-12 text-center">
-      <div className="w-14 h-14 rounded-full bg-[#8CC220]/15 border border-[#8CC220]/25 flex items-center justify-center mx-auto mb-6">
+      <div className="w-14 h-14 rounded-full bg-brand/15 border border-brand/25 flex items-center justify-center mx-auto mb-6">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path
             d="M9 12l2 2 4-4"
@@ -104,7 +104,7 @@ export default function ContactForm() {
             name="name"
             required
             placeholder="Your full name"
-            className="w-full bg-[#F7F8FA] border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#0A1628] focus:ring-2 focus:ring-[#0A1628]/10 transition-colors"
+            className="w-full bg-[#F7F8FA] border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy/10 transition-colors"
           />
         </div>
         <div>
@@ -116,7 +116,7 @@ export default function ContactForm() {
             name="email"
             required
             placeholder="you@organization.com"
-            className="w-full bg-[#F7F8FA] border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#0A1628] focus:ring-2 focus:ring-[#0A1628]/10 transition-colors"
+            className="w-full bg-[#F7F8FA] border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy/10 transition-colors"
           />
         </div>
       </div>
@@ -129,7 +129,7 @@ export default function ContactForm() {
           type="text"
           name="organization"
           placeholder="Your institution or organization"
-          className="w-full bg-[#F7F8FA] border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#0A1628] focus:ring-2 focus:ring-[#0A1628]/10 transition-colors"
+          className="w-full bg-[#F7F8FA] border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy/10 transition-colors"
         />
       </div>
 
@@ -139,7 +139,7 @@ export default function ContactForm() {
         </label>
         <select
           name="service"
-          className="w-full bg-[#F7F8FA] border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 focus:outline-none focus:border-[#0A1628] focus:ring-2 focus:ring-[#0A1628]/10 transition-colors appearance-none"
+          className="w-full bg-[#F7F8FA] border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy/10 transition-colors appearance-none"
         >
           <option value="">Select a service area</option>
           {serviceOptions.map((opt) => (
@@ -159,7 +159,7 @@ export default function ContactForm() {
           required
           rows={5}
           placeholder="Describe your project, challenge, or goals. The more context you provide, the better we can prepare for our first conversation."
-          className="w-full bg-[#F7F8FA] border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#0A1628] focus:ring-2 focus:ring-[#0A1628]/10 transition-colors resize-none"
+          className="w-full bg-[#F7F8FA] border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy/10 transition-colors resize-none"
         />
       </div>
 

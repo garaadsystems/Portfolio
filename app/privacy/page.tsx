@@ -35,7 +35,7 @@ const sections = [
   },
   {
     title: "Your Rights",
-    body: "You have the right to request access to, correction of, or deletion of personal data we hold about you. To exercise these rights, contact us at info@garaadsystems.com. We will respond within 30 days.",
+    body: "You have the right to request access to, correction of, or deletion of personal data we hold about you. To exercise these rights, contact us at info@garaadsystems.tech. We will respond within 30 days.",
   },
   {
     title: "Children's Privacy",
@@ -47,7 +47,7 @@ const sections = [
   },
   {
     title: "Contact",
-    body: "For any privacy-related questions or requests, contact Garaad Systems at info@garaadsystems.com or by post at Bay/Haven Mall, G2, Jigjiga, Somali Region, Ethiopia.",
+    body: "For any privacy-related questions or requests, contact Garaad Systems at info@garaadsystems.tech or by post at 02, Burj Hassen Wali, Jigjiga, Somali Region, Ethiopia.",
   },
 ];
 
@@ -57,15 +57,7 @@ export default function PrivacyPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[#0A1628] pt-36 pb-20 px-6 relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.05]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#8CC220 1px, transparent 1px), linear-gradient(to right, #8CC220 1px, transparent 1px)",
-              backgroundSize: "72px 72px",
-            }}
-          />
+        <section className="bg-navy pt-36 pb-20 px-6 relative overflow-hidden">
           <div className="relative max-w-6xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 mb-6">
               <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">
@@ -93,7 +85,7 @@ export default function PrivacyPage() {
             <div className="space-y-10">
               {sections.map((section, i) => (
                 <div key={section.title} className="flex gap-6">
-                  <span className="text-xs font-bold text-[#8CC220] bg-[#0A1628] rounded-lg px-2.5 py-1 h-fit shrink-0 mt-0.5">
+                  <span className="text-xs font-bold text-brand bg-navy rounded-lg px-2.5 py-1 h-fit shrink-0 mt-0.5">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
@@ -107,7 +99,7 @@ export default function PrivacyPage() {
             <div className="mt-14 pt-10 border-t border-gray-100 flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#0A1628] text-white text-sm px-6 py-3 rounded-xl font-semibold hover:bg-[#0d1f3a] transition-colors"
+                className="inline-flex items-center gap-2 bg-navy text-white text-sm px-6 py-3 rounded-xl font-semibold hover:bg-navy-light transition-colors"
               >
                 Contact Us With Questions
               </Link>

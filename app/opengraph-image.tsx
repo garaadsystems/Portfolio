@@ -69,7 +69,7 @@ export default async function OGImage() {
               textTransform: "uppercase",
             }}
           >
-            Jijiga, Somali Region, Ethiopia
+            Jigjiga, Somali Region, Ethiopia
           </span>
         </div>
 

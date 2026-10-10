@@ -77,7 +77,7 @@ export async function subscribeNewsletter(
 
     await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL ?? "Garaad Systems <onboarding@resend.dev>",
-      to: process.env.CONTACT_TO_EMAIL ?? "info@garaadsystems.com",
+      to: process.env.CONTACT_TO_EMAIL ?? "info@garaadsystems.tech",
       subject: "New newsletter subscriber",
       html: `
         <div style="font-family:sans-serif;max-width:480px;margin:0 auto;">

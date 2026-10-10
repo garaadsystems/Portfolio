@@ -38,15 +38,7 @@ export default async function ProjectPage({ params }: Props) {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[#0A1628] pt-36 pb-24 px-6 relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.05]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#8CC220 1px, transparent 1px), linear-gradient(to right, #8CC220 1px, transparent 1px)",
-              backgroundSize: "72px 72px",
-            }}
-          />
+        <section className="bg-navy pt-36 pb-24 px-6 relative overflow-hidden">
           <div className="relative max-w-6xl mx-auto">
             <Link
               href="/projects"
@@ -65,7 +57,7 @@ export default async function ProjectPage({ params }: Props) {
             </Link>
 
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-[10px] font-bold text-[#8CC220] bg-[#8CC220]/10 border border-[#8CC220]/20 rounded-full px-3 py-1.5 uppercase tracking-widest">
+              <span className="text-[10px] font-bold text-brand bg-brand/10 border border-brand/20 rounded-full px-3 py-1.5 uppercase tracking-widest">
                 {project.category}
               </span>
               {project.featured && (
@@ -90,13 +82,13 @@ export default async function ProjectPage({ params }: Props) {
             {/* Left: description + approach */}
             <div className="md:col-span-2 space-y-10">
               <div>
-                <span className="text-[10px] font-bold text-[#0A1628]/40 uppercase tracking-widest block mb-4">
+                <span className="text-[10px] font-bold text-navy/40 uppercase tracking-widest block mb-4">
                   Overview
                 </span>
                 <p className="text-gray-600 text-base leading-relaxed">{project.detail}</p>
               </div>
               <div>
-                <span className="text-[10px] font-bold text-[#0A1628]/40 uppercase tracking-widest block mb-4">
+                <span className="text-[10px] font-bold text-navy/40 uppercase tracking-widest block mb-4">
                   Our Approach
                 </span>
                 <p className="text-gray-600 text-sm leading-relaxed">{project.approach}</p>
@@ -106,7 +98,7 @@ export default async function ProjectPage({ params }: Props) {
             {/* Right: tags + deliverables */}
             <div className="space-y-8">
               <div>
-                <span className="text-[10px] font-bold text-[#0A1628]/40 uppercase tracking-widest block mb-4">
+                <span className="text-[10px] font-bold text-navy/40 uppercase tracking-widest block mb-4">
                   Tags
                 </span>
                 <div className="flex flex-wrap gap-2">
@@ -121,7 +113,7 @@ export default async function ProjectPage({ params }: Props) {
                 </div>
               </div>
               <div>
-                <span className="text-[10px] font-bold text-[#0A1628]/40 uppercase tracking-widest block mb-4">
+                <span className="text-[10px] font-bold text-navy/40 uppercase tracking-widest block mb-4">
                   Deliverables
                 </span>
                 <ul className="space-y-2.5">
@@ -152,15 +144,7 @@ export default async function ProjectPage({ params }: Props) {
         </section>
 
         {/* Key Outcomes */}
-        <section className="py-24 px-6 bg-[#0A1628] relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#8CC220 1px, transparent 1px), linear-gradient(to right, #8CC220 1px, transparent 1px)",
-              backgroundSize: "72px 72px",
-            }}
-          />
+        <section className="py-24 px-6 bg-navy relative overflow-hidden">
           <div className="relative max-w-6xl mx-auto">
             <div className="text-center mb-14">
               <span className="text-[10px] font-bold text-white/35 uppercase tracking-widest block mb-3">
@@ -172,9 +156,9 @@ export default async function ProjectPage({ params }: Props) {
               {project.outcomes.map((outcome: string, i: number) => (
                 <div
                   key={outcome}
-                  className="flex items-start gap-4 bg-white/5 border border-white/8 rounded-xl p-6 hover:bg-white/8 transition-colors"
+                  className="flex items-start gap-4 bg-white/5 border border-white/[0.08] rounded-xl p-6 hover:bg-white/[0.08] transition-colors"
                 >
-                  <span className="text-xs font-bold text-[#8CC220] bg-[#8CC220]/10 border border-[#8CC220]/20 rounded-lg px-2 py-1 shrink-0">
+                  <span className="text-xs font-bold text-brand bg-brand/10 border border-brand/20 rounded-lg px-2 py-1 shrink-0">
                     0{i + 1}
                   </span>
                   <p className="text-sm text-white/60 leading-relaxed pt-0.5">{outcome}</p>
@@ -189,12 +173,12 @@ export default async function ProjectPage({ params }: Props) {
           <section className="py-24 px-6 bg-[#F7F8FA]">
             <div className="max-w-6xl mx-auto">
               <div className="flex items-center justify-between mb-10">
-                <span className="text-[10px] font-bold text-[#0A1628]/40 uppercase tracking-widest">
+                <span className="text-[10px] font-bold text-navy/40 uppercase tracking-widest">
                   More Projects
                 </span>
                 <Link
                   href="/projects"
-                  className="text-sm font-semibold text-[#0A1628] hover:text-[#8CC220] transition-colors inline-flex items-center gap-1.5"
+                  className="text-sm font-semibold text-navy hover:text-brand transition-colors inline-flex items-center gap-1.5"
                 >
                   View all
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -233,7 +217,7 @@ export default async function ProjectPage({ params }: Props) {
                         {p.category}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-[#0A1628]">
+                    <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-navy">
                       {p.name}
                     </h3>
                     <p className="text-sm text-gray-500 leading-relaxed">{p.description}</p>
@@ -245,26 +229,18 @@ export default async function ProjectPage({ params }: Props) {
         )}
 
         {/* CTA */}
-        <section className="py-24 px-6 bg-[#8CC220] relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.06]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#0A1628 1px, transparent 1px), linear-gradient(to right, #0A1628 1px, transparent 1px)",
-              backgroundSize: "72px 72px",
-            }}
-          />
+        <section className="py-24 px-6 bg-brand relative overflow-hidden">
           <div className="relative max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-black text-[#0A1628] mb-5 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-navy mb-5 tracking-tight">
               Ready to Build Something Similar?
             </h2>
-            <p className="text-[#0A1628]/60 mb-10 max-w-md mx-auto leading-relaxed">
+            <p className="text-navy/80 mb-10 max-w-md mx-auto leading-relaxed">
               Tell us about your institution&apos;s challenge and we&apos;ll show you how we can
               help.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-[#0A1628] text-white text-sm px-8 py-4 rounded-xl font-semibold hover:bg-[#0d1f3a] transition-colors"
+              className="inline-flex items-center gap-2 bg-navy text-white text-sm px-8 py-4 rounded-xl font-semibold hover:bg-navy-light transition-colors"
             >
               Start a Conversation
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

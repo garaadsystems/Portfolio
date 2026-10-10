@@ -32,7 +32,7 @@ export async function submitContact(
     await resend.emails.send({
       // Use your verified Resend domain; falls back to the shared test address
       from: process.env.RESEND_FROM_EMAIL ?? "Garaad Systems <onboarding@resend.dev>",
-      to: [process.env.CONTACT_TO_EMAIL ?? "info@garaadsystems.com"],
+      to: [process.env.CONTACT_TO_EMAIL ?? "info@garaadsystems.tech"],
       replyTo: email,
       subject: `Project Inquiry — ${name}${organization ? ` (${organization})` : ""}`,
       html: `
@@ -87,7 +87,7 @@ export async function submitContact(
     console.error("Resend error:", err);
     return {
       error:
-        "Could not send your message. Please email us directly at info@garaadsystems.com.",
+        "Could not send your message. Please email us directly at info@garaadsystems.tech.",
     };
   }
 }

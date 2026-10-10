@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 const categoryColors: Record<string, string> = {
-  Perspective: "bg-[#8CC220]/10 text-[#5a9010]",
+  Perspective: "bg-brand/10 text-[#5a9010]",
   "Case Study": "bg-blue-50 text-blue-600",
-  Technical: "bg-[#0A1628]/8 text-[#0A1628]",
+  Technical: "bg-navy/[0.08] text-navy",
   Company: "bg-amber-50 text-amber-600",
   "Digital Transformation": "bg-purple-50 text-purple-600",
 };
@@ -42,27 +42,19 @@ export default async function InsightsPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[#8CC220] pt-36 pb-20 px-6 relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.06]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#0A1628 1px, transparent 1px), linear-gradient(to right, #0A1628 1px, transparent 1px)",
-              backgroundSize: "72px 72px",
-            }}
-          />
+        <section className="bg-brand pt-36 pb-20 px-6 relative overflow-hidden">
           <div className="relative max-w-6xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-[#0A1628]/8 border border-[#0A1628]/15 rounded-full px-3 py-1.5 mb-6">
-              <span className="text-[10px] font-bold text-[#0A1628]/50 uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 bg-navy/[0.08] border border-navy/15 rounded-full px-3 py-1.5 mb-6">
+              <span className="text-[10px] font-bold text-navy/80 uppercase tracking-widest">
                 Insights
               </span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-[#0A1628] leading-[1.04] tracking-tight mb-6 max-w-3xl">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-navy leading-[1.04] tracking-tight mb-6 max-w-3xl">
               Perspectives on
               <br />
               Digital Institutions
             </h1>
-            <p className="text-[#0A1628]/60 text-lg max-w-xl leading-relaxed">
+            <p className="text-navy/80 text-lg max-w-xl leading-relaxed">
               Articles, case studies, and technical guides from our work building digital platforms
               for public institutions across Ethiopia and the Horn of Africa.
             </p>
@@ -72,12 +64,12 @@ export default async function InsightsPage() {
         {/* Featured Article */}
         <section className="py-24 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
-            <p className="text-[10px] font-bold text-[#0A1628]/40 uppercase tracking-widest mb-6">
+            <p className="text-[10px] font-bold text-navy/40 uppercase tracking-widest mb-6">
               Featured Article
             </p>
             <Link
               href={`/insights/${featuredArticle.slug.current}`}
-              className="group block bg-[#0A1628] rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+              className="group block bg-navy rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300"
             >
               <div className="grid md:grid-cols-3">
                 <div className="md:col-span-2 p-12 md:p-14">
@@ -92,13 +84,13 @@ export default async function InsightsPage() {
                     <span className="text-xs text-white/30">{featuredArticle.readTime}</span>
                     <span className="text-xs text-white/30">{featuredArticle.date}</span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-black text-white leading-tight tracking-tight mb-5 group-hover:text-[#8CC220] transition-colors">
+                  <h2 className="text-3xl md:text-4xl font-black text-white leading-tight tracking-tight mb-5 group-hover:text-brand transition-colors">
                     {featuredArticle.title}
                   </h2>
                   <p className="text-white/50 text-sm leading-relaxed mb-8">
                     {featuredArticle.excerpt}
                   </p>
-                  <div className="inline-flex items-center gap-2 text-[#8CC220] text-sm font-semibold group-hover:gap-3 transition-all">
+                  <div className="inline-flex items-center gap-2 text-brand text-sm font-semibold group-hover:gap-3 transition-all">
                     Read article
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                       <path
@@ -137,7 +129,7 @@ export default async function InsightsPage() {
         <section className="pb-24 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-between mb-10">
-              <p className="text-[10px] font-bold text-[#0A1628]/40 uppercase tracking-widest">
+              <p className="text-[10px] font-bold text-navy/40 uppercase tracking-widest">
                 All Articles
               </p>
               <p className="text-xs text-gray-400">{articles.length} articles</p>
@@ -159,7 +151,7 @@ export default async function InsightsPage() {
                     </span>
                     <span className="text-[11px] text-gray-400">{article.readTime}</span>
                   </div>
-                  <h3 className="text-base font-black text-gray-900 leading-snug mb-3 group-hover:text-[#0A1628] transition-colors flex-1">
+                  <h3 className="text-base font-black text-gray-900 leading-snug mb-3 group-hover:text-navy transition-colors flex-1">
                     {article.title}
                   </h3>
                   <p className="text-xs text-gray-500 leading-relaxed mb-5">{article.excerpt}</p>
@@ -183,15 +175,7 @@ export default async function InsightsPage() {
         </section>
 
         {/* Newsletter / CTA */}
-        <section className="py-24 px-6 bg-[#0A1628] relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.05]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#8CC220 1px, transparent 1px), linear-gradient(to right, #8CC220 1px, transparent 1px)",
-              backgroundSize: "72px 72px",
-            }}
-          />
+        <section className="py-24 px-6 bg-navy relative overflow-hidden">
           <div className="relative max-w-3xl mx-auto text-center">
             <span className="text-xs font-bold text-white/30 uppercase tracking-widest mb-5 block">
               Stay Informed
@@ -201,7 +185,7 @@ export default async function InsightsPage() {
             </h2>
             <p className="text-white/45 mb-10 max-w-md mx-auto leading-relaxed">
               We publish articles on e-government, digital transformation, and technical
-              architecture. No noise — just substantive thinking from our team.
+              architecture, written by the people doing the work.
             </p>
             <div className="mb-14">
               <NewsletterForm />
