@@ -23,7 +23,7 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
           <div>
-            <span className="text-[10px] font-bold text-navy/40 uppercase tracking-widest block mb-3">
+            <span className="text-[10px] font-bold text-[#0A1628]/40 uppercase tracking-widest block mb-3">
               Client Voices
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight leading-tight">
@@ -50,8 +50,8 @@ export default function Testimonials() {
               <p className="text-gray-700 text-sm leading-relaxed flex-1">{t.quote}</p>
 
               <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                <div className="w-9 h-9 rounded-full bg-navy flex items-center justify-center shrink-0">
-                  <span className="text-xs font-bold text-brand">{t.initial}</span>
+                <div className="w-9 h-9 rounded-full bg-[#0A1628] flex items-center justify-center shrink-0">
+                  <span className="text-xs font-bold text-[#8CC220]">{t.initial}</span>
                 </div>
                 <div>
                   <p className="text-sm font-bold text-gray-900">{t.name}</p>

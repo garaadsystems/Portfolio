@@ -53,7 +53,15 @@ export default function TermsPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-navy pt-36 pb-20 px-6 relative overflow-hidden">
+        <section className="bg-[#0A1628] pt-36 pb-20 px-6 relative overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.05]"
+            style={{
+              backgroundImage:
+                "linear-gradient(#8CC220 1px, transparent 1px), linear-gradient(to right, #8CC220 1px, transparent 1px)",
+              backgroundSize: "72px 72px",
+            }}
+          />
           <div className="relative max-w-6xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 mb-6">
               <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">
@@ -75,7 +83,7 @@ export default function TermsPage() {
             <p className="text-gray-500 text-sm leading-relaxed mb-12 p-5 bg-[#F7F8FA] border border-gray-100 rounded-xl">
               By engaging Garaad Systems for any service, you agree to these terms. If you have
               questions, contact us at{" "}
-              <a href="mailto:info@garaadsystems.tech" className="text-navy font-medium hover:text-brand transition-colors">
+              <a href="mailto:info@garaadsystems.tech" className="text-[#0A1628] font-medium hover:text-[#8CC220] transition-colors">
                 info@garaadsystems.tech
               </a>{" "}
               before proceeding.
@@ -84,7 +92,7 @@ export default function TermsPage() {
             <div className="space-y-10">
               {sections.map((section, i) => (
                 <div key={section.title} className="flex gap-6">
-                  <span className="text-xs font-bold text-brand bg-navy rounded-lg px-2.5 py-1 h-fit shrink-0 mt-0.5">
+                  <span className="text-xs font-bold text-[#8CC220] bg-[#0A1628] rounded-lg px-2.5 py-1 h-fit shrink-0 mt-0.5">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
@@ -98,7 +106,7 @@ export default function TermsPage() {
             <div className="mt-14 pt-10 border-t border-gray-100 flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-navy text-white text-sm px-6 py-3 rounded-xl font-semibold hover:bg-navy-light transition-colors"
+                className="inline-flex items-center gap-2 bg-[#0A1628] text-white text-sm px-6 py-3 rounded-xl font-semibold hover:bg-[#0d1f3a] transition-colors"
               >
                 Contact Us With Questions
               </Link>

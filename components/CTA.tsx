@@ -2,25 +2,35 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section id="contact" className="py-28 px-6 bg-brand relative overflow-hidden">
+    <section id="contact" className="py-28 px-6 bg-[#8CC220] relative overflow-hidden">
+      {/* Subtle grid */}
+      <div
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#0A1628 1px, transparent 1px), linear-gradient(to right, #0A1628 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
+        }}
+      />
 
       <div className="relative max-w-3xl mx-auto text-center">
-        <span className="text-xs font-bold text-navy/80 uppercase tracking-widest mb-5 block">
+        <span className="text-xs font-bold text-[#0A1628]/60 uppercase tracking-widest mb-5 block">
           Get Started
         </span>
-        <h2 className="text-4xl md:text-[60px] font-black text-navy leading-[1.06] tracking-tight mb-5">
-          Have a system
+        <h2 className="text-4xl md:text-[60px] font-black text-[#0A1628] leading-[1.06] tracking-tight mb-5">
+          Ready to Modernize
           <br />
-          that needs building?
+          Your Institution?
         </h2>
-        <p className="text-navy/80 text-base max-w-md mx-auto mb-12 leading-relaxed">
-          Tell us what you&apos;re working on and we&apos;ll set up a first conversation.
+        <p className="text-[#0A1628]/65 text-base max-w-md mx-auto mb-12 leading-relaxed">
+          Let&apos;s discuss your digital transformation goals and chart a clear path forward
+          together.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-navy text-white text-sm px-8 py-4 rounded-xl font-semibold hover:bg-navy-light transition-colors"
+            className="inline-flex items-center gap-2 bg-[#0A1628] text-white text-sm px-8 py-4 rounded-xl font-semibold hover:bg-[#0d1f3a] transition-colors"
           >
             Start a Conversation
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -35,7 +45,7 @@ export default function CTA() {
           </Link>
           <Link
             href="tel:+251915506573"
-            className="inline-flex items-center gap-2 bg-navy/10 border border-navy/20 text-navy text-sm px-8 py-4 rounded-xl font-medium hover:bg-navy/20 transition-colors"
+            className="inline-flex items-center gap-2 bg-[#0A1628]/10 border border-[#0A1628]/20 text-[#0A1628] text-sm px-8 py-4 rounded-xl font-medium hover:bg-[#0A1628]/20 transition-colors"
           >
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
               <path
@@ -49,11 +59,11 @@ export default function CTA() {
           </Link>
         </div>
 
-        <div className="mt-14 pt-10 border-t border-navy/15 flex flex-col sm:flex-row items-center justify-center gap-5 text-xs text-navy/80">
+        <div className="mt-14 pt-10 border-t border-[#0A1628]/15 flex flex-col sm:flex-row items-center justify-center gap-5 text-xs text-[#0A1628]/45">
           <span>info@garaadsystems.tech</span>
-          <span className="hidden sm:block w-1 h-1 rounded-full bg-navy/30" />
+          <span className="hidden sm:block w-1 h-1 rounded-full bg-[#0A1628]/30" />
           <span>+251 91 550 6573</span>
-          <span className="hidden sm:block w-1 h-1 rounded-full bg-navy/30" />
+          <span className="hidden sm:block w-1 h-1 rounded-full bg-[#0A1628]/30" />
           <span>Burj Hassen Wali, Jigjiga, Ethiopia</span>
         </div>
       </div>

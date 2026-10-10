@@ -9,14 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: "#0A1628",
-          light: "#0d1f3a",
-        },
-        brand: {
-          DEFAULT: "#8CC220",
-          dark: "#78AB14",
-        },
+        primary: "#5DBB18",
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
       },
     },
   },

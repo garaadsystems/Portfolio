@@ -101,7 +101,15 @@ export default function ContactPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-navy pt-36 pb-20 px-6 relative overflow-hidden">
+        <section className="bg-[#0A1628] pt-36 pb-20 px-6 relative overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.05]"
+            style={{
+              backgroundImage:
+                "linear-gradient(#8CC220 1px, transparent 1px), linear-gradient(to right, #8CC220 1px, transparent 1px)",
+              backgroundSize: "72px 72px",
+            }}
+          />
           <div className="relative max-w-6xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 mb-6">
               <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">
@@ -111,7 +119,7 @@ export default function ContactPage() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.04] tracking-tight mb-6 max-w-3xl">
               Let&apos;s Start a
               <br />
-              <span className="text-brand">Conversation</span>
+              <span className="text-[#8CC220]">Conversation</span>
             </h1>
             <p className="text-white/50 text-lg max-w-xl leading-relaxed">
               Tell us about your institution&apos;s challenge. Whether you have a clear brief or are
@@ -129,7 +137,7 @@ export default function ContactPage() {
               <div className="space-y-5 mb-10">
                 {contactMethods.map((method) => (
                   <div key={method.label} className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-navy/5 border border-navy/10 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-[#0A1628]/5 border border-[#0A1628]/10 flex items-center justify-center shrink-0">
                       {method.icon}
                     </div>
                     <div>
@@ -139,7 +147,7 @@ export default function ContactPage() {
                       {method.href !== "#" ? (
                         <a
                           href={method.href}
-                          className="text-sm text-gray-700 font-medium hover:text-navy transition-colors"
+                          className="text-sm text-gray-700 font-medium hover:text-[#0A1628] transition-colors"
                         >
                           {method.value}
                         </a>
@@ -162,7 +170,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
-                    className="w-9 h-9 rounded-xl bg-navy/5 border border-navy/10 flex items-center justify-center text-navy/40 hover:text-navy hover:bg-navy/10 transition-colors"
+                    className="w-9 h-9 rounded-xl bg-[#0A1628]/5 border border-[#0A1628]/10 flex items-center justify-center text-[#0A1628]/40 hover:text-[#0A1628] hover:bg-[#0A1628]/10 transition-colors"
                   >
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
@@ -173,8 +181,8 @@ export default function ContactPage() {
               </div>
 
               {/* Note */}
-              <div className="mt-10 p-5 bg-brand/[0.08] border border-brand/20 rounded-xl">
-                <p className="text-xs text-navy/70 leading-relaxed">
+              <div className="mt-10 p-5 bg-[#8CC220]/8 border border-[#8CC220]/20 rounded-xl">
+                <p className="text-xs text-[#0A1628]/70 leading-relaxed">
                   We typically respond within one business day. For urgent matters, calling directly
                   is the fastest way to reach us.
                 </p>
@@ -193,7 +201,7 @@ export default function ContactPage() {
         <section className="py-24 px-6 bg-[#F7F8FA] border-t border-gray-100">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14">
-              <span className="text-xs font-bold text-navy uppercase tracking-widest mb-3 block">
+              <span className="text-xs font-bold text-[#0A1628] uppercase tracking-widest mb-3 block">
                 What to Expect
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">
@@ -203,7 +211,7 @@ export default function ContactPage() {
             <div className="grid md:grid-cols-4 gap-4">
               {nextSteps.map((item) => (
                 <div key={item.step} className="bg-white rounded-2xl p-7 border border-gray-100">
-                  <span className="text-xs font-bold text-brand bg-navy rounded-lg px-2.5 py-1 mb-5 inline-block">
+                  <span className="text-xs font-bold text-[#8CC220] bg-[#0A1628] rounded-lg px-2.5 py-1 mb-5 inline-block">
                     {item.step}
                   </span>
                   <h3 className="text-sm font-bold text-gray-900 mb-2">{item.title}</h3>
@@ -235,7 +243,7 @@ export default function ContactPage() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 bg-navy text-white text-sm px-6 py-3 rounded-xl font-semibold hover:bg-navy-light transition-colors"
+                className="inline-flex items-center gap-2 bg-[#0A1628] text-white text-sm px-6 py-3 rounded-xl font-semibold hover:bg-[#0d1f3a] transition-colors"
               >
                 Explore Services
               </Link>

@@ -26,9 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const categoryColors: Record<string, string> = {
-  Perspective: "bg-brand/10 text-[#5a9010]",
+  Perspective: "bg-[#8CC220]/10 text-[#5a9010]",
   "Case Study": "bg-blue-50 text-blue-600",
-  Technical: "bg-navy/[0.08] text-navy",
+  Technical: "bg-[#0A1628]/8 text-[#0A1628]",
   Company: "bg-amber-50 text-amber-600",
   "Digital Transformation": "bg-purple-50 text-purple-600",
 };
@@ -38,7 +38,7 @@ const portableTextComponents = {
     h2: ({ children }: any) => <h2 className="text-2xl font-bold mt-8 mb-4">{children}</h2>,
     h3: ({ children }: any) => <h3 className="text-xl font-bold mt-6 mb-3">{children}</h3>,
     blockquote: ({ children }: any) => (
-      <blockquote className="border-l-4 border-brand pl-6 py-4 my-6 italic text-gray-600">
+      <blockquote className="border-l-4 border-[#8CC220] pl-6 py-4 my-6 italic text-gray-600">
         {children}
       </blockquote>
     ),
@@ -65,11 +65,19 @@ export default async function InsightPage({ params }: Props) {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-brand pt-36 pb-20 px-6 relative overflow-hidden">
+        <section className="bg-[#8CC220] pt-36 pb-20 px-6 relative overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.06]"
+            style={{
+              backgroundImage:
+                "linear-gradient(#0A1628 1px, transparent 1px), linear-gradient(to right, #0A1628 1px, transparent 1px)",
+              backgroundSize: "72px 72px",
+            }}
+          />
           <div className="relative max-w-3xl mx-auto">
             <Link
               href="/insights"
-              className="inline-flex items-center gap-2 text-navy/80 hover:text-navy text-sm mb-10 transition-colors"
+              className="inline-flex items-center gap-2 text-[#0A1628]/50 hover:text-[#0A1628] text-sm mb-10 transition-colors"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path
@@ -91,14 +99,14 @@ export default async function InsightPage({ params }: Props) {
               >
                 {article.category}
               </span>
-              <span className="text-navy/80 text-xs">{article.readTime}</span>
-              <span className="text-navy/80 text-xs">{article.date}</span>
+              <span className="text-[#0A1628]/45 text-xs">{article.readTime}</span>
+              <span className="text-[#0A1628]/45 text-xs">{article.date}</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-black text-navy leading-[1.06] tracking-tight mb-5">
+            <h1 className="text-4xl md:text-5xl font-black text-[#0A1628] leading-[1.06] tracking-tight mb-5">
               {article.title}
             </h1>
-            <p className="text-navy/80 text-base leading-relaxed max-w-2xl">
+            <p className="text-[#0A1628]/60 text-base leading-relaxed max-w-2xl">
               {article.excerpt}
             </p>
           </div>
@@ -130,12 +138,12 @@ export default async function InsightPage({ params }: Props) {
           <section className="py-24 px-6 bg-[#F7F8FA] border-t border-gray-100">
             <div className="max-w-6xl mx-auto">
               <div className="flex items-center justify-between mb-10">
-                <span className="text-[10px] font-bold text-navy/40 uppercase tracking-widest">
+                <span className="text-[10px] font-bold text-[#0A1628]/40 uppercase tracking-widest">
                   More Insights
                 </span>
                 <Link
                   href="/insights"
-                  className="text-sm font-semibold text-navy hover:text-brand transition-colors inline-flex items-center gap-1.5"
+                  className="text-sm font-semibold text-[#0A1628] hover:text-[#8CC220] transition-colors inline-flex items-center gap-1.5"
                 >
                   View all
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -166,7 +174,7 @@ export default async function InsightPage({ params }: Props) {
                       </span>
                       <span className="text-[11px] text-gray-400">{a.readTime}</span>
                     </div>
-                    <h3 className="text-sm font-black text-gray-900 leading-snug mb-2 group-hover:text-navy transition-colors">
+                    <h3 className="text-sm font-black text-gray-900 leading-snug mb-2 group-hover:text-[#0A1628] transition-colors">
                       {a.title}
                     </h3>
                     <p className="text-xs text-gray-500 leading-relaxed line-clamp-3">
@@ -180,7 +188,7 @@ export default async function InsightPage({ params }: Props) {
         )}
 
         {/* CTA */}
-        <section className="py-20 px-6 bg-navy">
+        <section className="py-20 px-6 bg-[#0A1628]">
           <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <h3 className="text-xl font-black text-white mb-2">
@@ -194,13 +202,13 @@ export default async function InsightPage({ params }: Props) {
             <div className="flex gap-3 shrink-0">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-brand text-navy text-sm px-6 py-3 rounded-xl font-bold hover:bg-brand-dark transition-colors"
+                className="inline-flex items-center gap-2 bg-[#8CC220] text-[#0A1628] text-sm px-6 py-3 rounded-xl font-bold hover:bg-[#78AB14] transition-colors"
               >
                 Get in Touch
               </Link>
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 bg-white/[0.08] border border-white/15 text-white text-sm px-6 py-3 rounded-xl font-medium hover:bg-white/15 transition-colors"
+                className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-white text-sm px-6 py-3 rounded-xl font-medium hover:bg-white/15 transition-colors"
               >
                 Our Work
               </Link>

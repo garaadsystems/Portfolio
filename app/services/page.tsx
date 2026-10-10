@@ -44,7 +44,7 @@ const services = [
     title: "Custom Software Development",
     tagline: "Tailored systems built for institutional realities.",
     description:
-      "We build web applications, dashboards, portals, and internal management systems custom-engineered to your organization's specific workflows, user base, and operational environment, not adapted from generic templates.",
+      "We build web applications, dashboards, portals, and internal management systems custom-engineered to your organization's specific workflows, user base, and operational environment — not adapted from generic templates.",
     capabilities: [
       "Web portals and institutional management systems",
       "Internal dashboards and operations tools",
@@ -67,7 +67,7 @@ const services = [
     title: "Systems Integration",
     tagline: "Connecting legacy systems with modern architectures.",
     description:
-      "Many institutions operate fragmented or outdated systems that don't communicate with each other. We build integration layers that connect legacy infrastructure with modern platforms to improve data flow and operational efficiency.",
+      "Many institutions operate fragmented or outdated systems that don't communicate with each other. We bridge the gaps — building integration layers that connect legacy infrastructure with modern platforms to improve data flow and operational efficiency.",
     capabilities: [
       "Legacy system modernization and API bridges",
       "Database migration and data consolidation",
@@ -89,7 +89,7 @@ const services = [
     title: "Technical Consulting",
     tagline: "Clear direction for complex digital transformation.",
     description:
-      "We provide expert guidance to help institutional leaders plan, prioritize, and execute digital transformation initiatives with confidence. Our advisory services bridge technology, policy, and operational reality, turning ambition into achievable, funded roadmaps.",
+      "We provide expert guidance to help institutional leaders plan, prioritize, and execute digital transformation initiatives with confidence. Our advisory services bridge technology, policy, and operational reality — translating ambition into achievable, funded roadmaps.",
     capabilities: [
       "Digital transformation roadmap development",
       "Technology architecture design and review",
@@ -163,19 +163,20 @@ export default function ServicesPage() {
         {/* Hero */}
         <section className="bg-[#F7F8FA] pt-36 pb-20 px-6 border-b border-gray-100">
           <div className="max-w-6xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-navy/5 border border-navy/10 rounded-full px-3 py-1.5 mb-6">
-              <span className="text-[10px] font-bold text-navy/50 uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 bg-[#0A1628]/5 border border-[#0A1628]/10 rounded-full px-3 py-1.5 mb-6">
+              <span className="text-[10px] font-bold text-[#0A1628]/50 uppercase tracking-widest">
                 What We Do
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-[1.04] tracking-tight mb-6 max-w-4xl">
               Full-Spectrum Digital
               <br />
-              <span className="text-navy">Transformation Services</span>
+              <span className="text-[#0A1628]">Transformation Services</span>
             </h1>
             <p className="text-gray-500 text-lg max-w-2xl leading-relaxed">
-              We take projects from the first conversation to a running system, built for the
-              demands of government and mission-critical operations.
+              From strategy through to deployment, we deliver integrated solutions that drive real
+              institutional change — engineered for the specific demands of government and
+              mission-critical operations.
             </p>
           </div>
         </section>
@@ -189,7 +190,7 @@ export default function ServicesPage() {
                 className={`rounded-2xl p-10 border ${
                   i % 2 === 0
                     ? "bg-[#F7F8FA] border-gray-100"
-                    : "bg-navy border-navy"
+                    : "bg-[#0A1628] border-[#0A1628]"
                 }`}
               >
                 <div className="grid md:grid-cols-2 gap-10 items-start">
@@ -197,7 +198,7 @@ export default function ServicesPage() {
                     <div className="flex items-center gap-4 mb-6">
                       <div
                         className={`w-11 h-11 rounded-xl flex items-center justify-center ${
-                          i % 2 === 0 ? "bg-navy/[0.08]" : "bg-white/10"
+                          i % 2 === 0 ? "bg-[#0A1628]/8" : "bg-white/10"
                         }`}
                       >
                         {i % 2 === 0 ? (
@@ -221,7 +222,7 @@ export default function ServicesPage() {
                       </div>
                       <span
                         className={`text-[10px] font-bold uppercase tracking-widest ${
-                          i % 2 === 0 ? "text-navy/40" : "text-white/35"
+                          i % 2 === 0 ? "text-[#0A1628]/40" : "text-white/35"
                         }`}
                       >
                         Service {service.number}
@@ -236,7 +237,7 @@ export default function ServicesPage() {
                     </h2>
                     <p
                       className={`text-sm font-semibold mb-5 ${
-                        i % 2 === 0 ? "text-navy" : "text-brand"
+                        i % 2 === 0 ? "text-[#0A1628]" : "text-[#8CC220]"
                       }`}
                     >
                       {service.tagline}
@@ -252,7 +253,7 @@ export default function ServicesPage() {
                   <div>
                     <p
                       className={`text-[10px] font-bold uppercase tracking-widest mb-5 ${
-                        i % 2 === 0 ? "text-navy/40" : "text-white/35"
+                        i % 2 === 0 ? "text-[#0A1628]/40" : "text-white/35"
                       }`}
                     >
                       What&apos;s Included
@@ -293,16 +294,24 @@ export default function ServicesPage() {
         </section>
 
         {/* Technical Capabilities */}
-        <section className="py-24 px-6 bg-brand relative overflow-hidden">
+        <section className="py-24 px-6 bg-[#8CC220] relative overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.06]"
+            style={{
+              backgroundImage:
+                "linear-gradient(#0A1628 1px, transparent 1px), linear-gradient(to right, #0A1628 1px, transparent 1px)",
+              backgroundSize: "72px 72px",
+            }}
+          />
           <div className="relative max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <span className="text-xs font-bold text-navy/80 uppercase tracking-widest mb-3 block">
+              <span className="text-xs font-bold text-[#0A1628]/55 uppercase tracking-widest mb-3 block">
                 Core Technical Capabilities
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-navy tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-black text-[#0A1628] tracking-tight">
                 The Stack Behind Every Delivery
               </h2>
-              <p className="text-navy/80 text-base mt-5 max-w-xl mx-auto leading-relaxed">
+              <p className="text-[#0A1628]/60 text-base mt-5 max-w-xl mx-auto leading-relaxed">
                 Across every engagement, these five capabilities define how we approach architecture,
                 security, and long-term operational value.
               </p>
@@ -311,13 +320,13 @@ export default function ServicesPage() {
               {capabilities.map((cap, i) => (
                 <div
                   key={cap.title}
-                  className="bg-navy/[0.07] border border-navy/15 rounded-2xl p-6 hover:bg-navy/[0.12] hover:border-navy/25 transition-all duration-200"
+                  className="bg-[#0A1628]/[0.07] border border-[#0A1628]/15 rounded-2xl p-6 hover:bg-[#0A1628]/[0.12] hover:border-[#0A1628]/25 transition-all duration-200"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-navy/10 flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#0A1628]/10 flex items-center justify-center mb-4">
                     {cap.icon}
                   </div>
-                  <h3 className="text-sm font-bold text-navy mb-2">{cap.title}</h3>
-                  <p className="text-xs text-navy/80 leading-relaxed">{cap.description}</p>
+                  <h3 className="text-sm font-bold text-[#0A1628] mb-2">{cap.title}</h3>
+                  <p className="text-xs text-[#0A1628]/60 leading-relaxed">{cap.description}</p>
                 </div>
               ))}
             </div>
@@ -328,7 +337,7 @@ export default function ServicesPage() {
         <section className="py-24 px-6 bg-white">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
             <div>
-              <span className="text-xs font-bold text-navy uppercase tracking-widest mb-3 block">
+              <span className="text-xs font-bold text-[#0A1628] uppercase tracking-widest mb-3 block">
                 How We Work
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-[1.1] tracking-tight mb-6">
@@ -352,8 +361,8 @@ export default function ServicesPage() {
                 { step: "04", title: "Deploy & Train", desc: "System deployment, integration testing, and team onboarding." },
                 { step: "05", title: "Support & Evolve", desc: "Ongoing maintenance, monitoring, and feature iteration." },
               ].map((item) => (
-                <div key={item.step} className="flex items-start gap-4 p-4 rounded-xl border border-gray-100 hover:border-navy/20 hover:bg-[#F7F8FA] transition-colors">
-                  <span className="text-xs font-bold text-brand bg-navy rounded-lg px-2.5 py-1 shrink-0">
+                <div key={item.step} className="flex items-start gap-4 p-4 rounded-xl border border-gray-100 hover:border-[#0A1628]/20 hover:bg-[#F7F8FA] transition-colors">
+                  <span className="text-xs font-bold text-[#8CC220] bg-[#0A1628] rounded-lg px-2.5 py-1 shrink-0">
                     {item.step}
                   </span>
                   <div>
@@ -367,7 +376,15 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 px-6 bg-navy relative overflow-hidden">
+        <section className="py-24 px-6 bg-[#0A1628] relative overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.05]"
+            style={{
+              backgroundImage:
+                "linear-gradient(#8CC220 1px, transparent 1px), linear-gradient(to right, #8CC220 1px, transparent 1px)",
+              backgroundSize: "72px 72px",
+            }}
+          />
           <div className="relative max-w-3xl mx-auto text-center">
             <span className="text-xs font-bold text-white/35 uppercase tracking-widest mb-5 block">
               Get Started
@@ -382,7 +399,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-brand text-navy text-sm px-8 py-4 rounded-xl font-bold hover:bg-brand-dark transition-colors"
+                className="inline-flex items-center gap-2 bg-[#8CC220] text-[#0A1628] text-sm px-8 py-4 rounded-xl font-bold hover:bg-[#78AB14] transition-colors"
               >
                 Start a Project
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -397,7 +414,7 @@ export default function ServicesPage() {
               </Link>
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 bg-white/[0.08] border border-white/15 text-white text-sm px-8 py-4 rounded-xl font-medium hover:bg-white/15 transition-colors"
+                className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-white text-sm px-8 py-4 rounded-xl font-medium hover:bg-white/15 transition-colors"
               >
                 View Our Work
               </Link>
