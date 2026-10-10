@@ -39,10 +39,14 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/">
           <Image
-            src="/logo.jpg"
+            src={
+              showDark
+                ? "/logo/lockup/garaad-lockup-navy-2x.png"
+                : "/logo/lockup/garaad-lockup-white-2x.png"
+            }
             alt="Garaad Systems"
-            width={160}
-            height={52}
+            width={144}
+            height={44}
             className="h-11 w-auto object-contain"
             priority
           />

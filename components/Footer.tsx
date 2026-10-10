@@ -11,11 +11,11 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="inline-block mb-5">
               <Image
-                src="/logo.jpg"
+                src="/logo/lockup/garaad-lockup-white-2x.png"
                 alt="Garaad Systems"
-                width={160}
-                height={52}
-                className="h-11 w-auto object-contain rounded-lg"
+                width={144}
+                height={44}
+                className="h-11 w-auto object-contain"
               />
             </Link>
 

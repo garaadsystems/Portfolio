@@ -1,10 +1,15 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const alt = "Garaad Systems — Technology & Digital Consultancy";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OGImage() {
+export default async function OGImage() {
+  const mark = await readFile(join(process.cwd(), "public/logo/mark/garaad-mark-green.png"));
+  const markSrc = `data:image/png;base64,${mark.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -33,6 +38,10 @@ export default function OGImage() {
             opacity: 0.07,
           }}
         />
+
+        {/* Logo mark */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={markSrc} width={72} height={71} alt="" style={{ marginBottom: 40 }} />
 
         {/* Badge */}
         <div

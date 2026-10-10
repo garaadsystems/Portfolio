@@ -13,6 +13,13 @@ export const metadata: Metadata = {
   title: "Garaad Systems",
   description:
     "Garaad Systems delivers e-government, digital engineering, and institutional modernization solutions that strengthen public and private sector institutions across Ethiopia and the Horn of Africa. Based in Jigjiga, Somali Region.",
+  icons: {
+    icon: [
+      { url: "/logo/icon/garaad-icon-navy-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo/icon/garaad-icon-navy-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: { url: "/logo/icon/garaad-icon-navy-180.png", sizes: "180x180" },
+  },
   openGraph: {
     siteName: "Garaad Systems",
     type: "website",
